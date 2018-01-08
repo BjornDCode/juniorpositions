@@ -1,16 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Junior Positions</title>
-</head>
-<body>
-    
-    <ul>
-        @foreach($jobs as $job)
-            <li>{{ $job->title }}</li>
-        @endforeach
-    </ul>
+@extends('layouts.app')
 
-</body>
-</html>
+@section('content')
+    <div class="container">
+        <ul class="jobs">
+            @foreach($jobs as $job)
+                <li class="job">
+                    {{ $job->title }}
+                </li>
+            @endforeach
+        </ul>
+    </div>
+@endsection

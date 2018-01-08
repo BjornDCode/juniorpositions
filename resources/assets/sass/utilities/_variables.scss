@@ -1,0 +1,16 @@
+// Breakpoints
+$breakpoints: (
+    'mobile': (min-width: 375px),
+    'tablet': (min-width: 768px),
+    'desktop': (min-width: 1024px),
+) !global;
+
+
+// Colors
+$grey-medium: #F0F0F0;
+$grey-light: #DADADA;
+$black: #242424;
+$white: #fff;
+$yellow: #F5DE3C; 
+$twitter-blue: #1DA1F2;
+$facebook-blue: #3B5998;
