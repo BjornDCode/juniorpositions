@@ -143,8 +143,26 @@ body {
   padding: 10px;
 }
 
+@media (min-width: 768px) {
+  .container {
+    width: 500px;
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    width: 600px;
+  }
+}
+
 body {
   font-family: 'Montserrat', sans-serif;
+}
+
+a {
+  color: #242424;
+  text-decoration: none;
 }
 
 p {
@@ -161,10 +179,14 @@ h3 {
 }
 
 .job {
-  position: relative;
   background-color: #fff;
   margin-bottom: 10px;
   padding: 15px;
+}
+
+.job > a {
+  position: relative;
+  display: block;
 }
 
 .job .wrapper {
@@ -173,11 +195,13 @@ h3 {
 
 .job .icon {
   position: absolute;
-  right: 10px;
-  top: 20px;
+  right: 0px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
 }
 
-.job .fold-out {
+.job .content {
   margin-top: 10px;
 }
 

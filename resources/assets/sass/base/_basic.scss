@@ -4,5 +4,15 @@ body {
 
 .container {
     padding: 10px;
+
+    @include breakpoint(tablet) {
+        width: 500px;
+        margin: 0 auto;
+    }
+
+    @include breakpoint(desktop) {
+        width: 600px;
+    }
+
 }
 

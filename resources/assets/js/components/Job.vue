@@ -2,9 +2,7 @@
     <li class="job">
         <router-link :to="url">
             <div class="wrapper">
-                <h3>
-                    {{ attributes.title }}
-                </h3>
+                <h3>{{ attributes.title }}</h3>
             </div>
             <div class="icon">
                 <img src="/images/arrow.svg" alt="Arrow Down">
