@@ -143,9 +143,41 @@ body {
   padding: 10px;
 }
 
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+p {
+  font-weight: 300;
+  color: #6C6C6C;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+h3 {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+}
+
 .job {
+  position: relative;
   background-color: #fff;
   margin-bottom: 10px;
   padding: 15px;
+}
+
+.job .wrapper {
+  width: 90%;
+}
+
+.job .icon {
+  position: absolute;
+  right: 10px;
+  top: 20px;
+}
+
+.job .fold-out {
+  margin-top: 10px;
 }
 
