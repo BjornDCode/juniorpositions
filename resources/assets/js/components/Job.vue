@@ -1,7 +1,37 @@
+<template>
+    <li class="job">
+        <router-link :to="url">
+            <div class="wrapper">
+                <h3>
+                    {{ attributes.title }}
+                </h3>
+            </div>
+            <div class="icon">
+                <img src="/images/arrow.svg" alt="Arrow Down">
+            </div>
+        </router-link>
+        <div class="wrapper">
+            <router-view :show="isOpen" :description="attributes.description"></router-view>
+        </div>
+    </li>
+</template>
+
 <script>
     export default {
-        mounted() {
-            console.log('Component mounted.')
+        props: ['attributes'],
+
+        computed: {
+            isOpen() {
+                return this.$route.params.id == this.attributes.id;
+            },
+
+            url() {
+                if (this.isOpen) {
+                    return '/';
+                }
+
+                return '/job/' + this.attributes.id;
+            }
         }
     }
 </script>

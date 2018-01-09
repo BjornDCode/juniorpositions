@@ -22,14 +22,14 @@ class JobsTest extends TestCase
     }
 
     /** @test */
-    // public function a_user_can_view_a_single_job()
-    // {
-    //     $firstJob = factory('App\Job')->create();
-    //     $secondJob = factory('App\Job')->create();
+    public function a_user_can_view_a_single_job()
+    {
+        $firstJob = factory('App\Job')->create();
+        $secondJob = factory('App\Job')->create();
 
-    //     $this->get('/job/' . $firstJob->id)
-    //          ->assertSee($firstJob->description)
-    //          ->assertNotSee($secondJob->description);
-    // }
+        $this->get('/job/' . $firstJob->id)
+             ->assertSee($firstJob->description)
+             ->assertDontSee($secondJob->description);
+    }
 
 }

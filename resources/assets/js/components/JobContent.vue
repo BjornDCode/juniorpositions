@@ -1,15 +1,9 @@
 <template>
-    <div v-if="isActive">{{ attributes.description }}</div>
+    <div v-if="show">{{ description }}</div>
 </template>
 
 <script>
     export default {
-        props: ['attributes'],
-
-        computed: {
-            isActive() {
-                return this.$route.params.id == this.attributes.id;
-            }
-        }
+        props: ['show', 'description'],
     }
 </script>
