@@ -14295,6 +14295,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     props: ['attributes'],
@@ -14332,6 +14340,18 @@ var render = function() {
         _vm._v(" "),
         _c("div", { staticClass: "icon" }, [
           _c("img", { attrs: { src: "/images/arrow.svg", alt: "Arrow Down" } })
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "meta wrapper" }, [
+        _c("div", [
+          _c("span", { staticClass: "company" }, [
+            _vm._v(
+              "\n                " +
+                _vm._s(_vm.attributes.company.name) +
+                "\n            "
+            )
+          ])
         ])
       ]),
       _vm._v(" "),

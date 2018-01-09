@@ -13,23 +13,20 @@ class JobsTest extends TestCase
     /** @test */
     public function a_user_can_browse_all_jobs()
     {
-        // $firstJob = factory('App\Job')->create();
-        // $secondJob = factory('App\Job')->create();
+        $firstJob = factory('App\Job')->create();
+        $secondJob = factory('App\Job')->create();
 
-        // $this->get('/')
-        //      ->assertSee($firstJob->title)
-        //      ->assertSee($secondJob->title);
+        $this->get('/')
+             ->assertSee($firstJob->title)
+             ->assertSee($secondJob->title);
     }
 
     /** @test */
     public function a_user_can_view_a_single_job()
     {
-        // $firstJob = factory('App\Job')->create();
-        // $secondJob = factory('App\Job')->create();
+        // Move to VUE
 
-        // $this->get('/job/' . $firstJob->id)
-        //      ->assertSee($firstJob->description)
-        //      ->assertDontSee($secondJob->description);
+        $this->assertTrue(true);
     }
 
 }

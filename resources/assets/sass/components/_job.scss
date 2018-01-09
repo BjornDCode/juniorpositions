@@ -21,13 +21,19 @@
         transform: translateY(-50%);
     }
 
+    .meta {
+        padding: 0 0 15px 15px;
+    }
+
+    .company {
+        font-size: 12px;
+        color: $grey-dark;
+        font-weight: 300;
+    }
+
     .content {
-        // margin-top: 10px;
         padding: 0 15px 15px 15px;
     }
 
-    @include breakpoint(tablet) {
-
-    }
 
 }

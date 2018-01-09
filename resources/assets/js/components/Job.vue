@@ -8,6 +8,14 @@
                 <img src="/images/arrow.svg" alt="Arrow Down">
             </div>
         </router-link>
+        <div class="meta wrapper">
+            <div>
+                <span class="company">
+                    {{ attributes.company.name }}
+                </span>
+            </div>
+
+        </div>
         <div class="wrapper">
             <router-view :show="isOpen" :description="attributes.description"></router-view>
         </div>
