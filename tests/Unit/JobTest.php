@@ -18,4 +18,12 @@ class JobTest extends TestCase
         $this->assertInstanceOf('App\Company', $job->company);
     }
 
+    /** @test */
+    public function it_contains_many_skills() 
+    {
+        $job = factory('App\Job')->create();
+
+        $this->assertInstanceOf('Illuminate\Database\Eloquent\Collection', $job->skills);
+    }
+
 }
