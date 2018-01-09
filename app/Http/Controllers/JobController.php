@@ -10,7 +10,7 @@ class JobController extends Controller
     
     public function index() 
     {
-        $jobs = Job::with('company')->get();
+        $jobs = Job::with(['company', 'skills'])->get();
 
         return view('jobs.index', compact('jobs'));
     }

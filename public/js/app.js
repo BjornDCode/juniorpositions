@@ -14303,6 +14303,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     props: ['attributes'],
@@ -14345,14 +14346,25 @@ var render = function() {
       _vm._v(" "),
       _c("div", { staticClass: "meta wrapper" }, [
         _c("div", [
-          _c("span", { staticClass: "company" }, [
-            _vm._v(
-              "\n                " +
-                _vm._s(_vm.attributes.company.name) +
-                "\n            "
+          _vm._v(
+            "\n            " +
+              _vm._s(_vm.attributes.company.name) +
+              " - Location, CO\n        "
+          )
+        ]),
+        _vm._v(" "),
+        _vm.attributes.skills.length
+          ? _c(
+              "div",
+              [
+                _vm._v("\n            Skills: \n            "),
+                _vm._l(_vm.attributes.skills, function(skill) {
+                  return _c("span", [_vm._v(_vm._s(skill.name) + ", ")])
+                })
+              ],
+              2
             )
-          ])
-        ])
+          : _vm._e()
       ]),
       _vm._v(" "),
       _c(

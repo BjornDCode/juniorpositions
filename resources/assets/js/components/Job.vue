@@ -10,11 +10,12 @@
         </router-link>
         <div class="meta wrapper">
             <div>
-                <span class="company">
-                    {{ attributes.company.name }}
-                </span>
+                {{ attributes.company.name }} - Location, CO
             </div>
-
+            <div v-if="attributes.skills.length">
+                Skills: 
+                <span v-for="skill in attributes.skills">{{skill.name}}, </span>
+            </div>
         </div>
         <div class="wrapper">
             <router-view :show="isOpen" :description="attributes.description"></router-view>
