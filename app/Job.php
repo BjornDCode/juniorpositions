@@ -25,7 +25,9 @@ class Job extends Model
     public function twitterUrl() 
     {
         $jobTitleSlug = str_slug($this->title, '+');
-        return "https://twitter.com/home?status=Company+is+looking+for+a+${jobTitleSlug}+in+City+{$this->ownUrl()}";
+        $companySlug = str_slug($this->company->name);
+
+        return "https://twitter.com/home?status=${companySlug}+is+looking+for+a+${jobTitleSlug}+in+CITY+{$this->ownUrl()}";
     }
 
     public function facebookUrl() 

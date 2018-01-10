@@ -42,8 +42,9 @@ class JobTest extends TestCase
         $job = factory('App\Job')->create();
 
         $jobTitleSlug = str_slug($job->title, '+');
+        $companySlug = str_slug($job->company->name);
 
-        $testUrl = "https://twitter.com/home?status=Company+is+looking+for+a+${jobTitleSlug}+in+City+{$job->ownUrl()}";
+        $testUrl = "https://twitter.com/home?status=${companySlug}+is+looking+for+a+${jobTitleSlug}+in+CITY+{$job->ownUrl()}";
 
         $this->assertEquals($testUrl, $job->twitterUrl());
     }
