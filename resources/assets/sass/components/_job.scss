@@ -19,6 +19,10 @@
         right: 15px;
         top: 50%;
         transform: translateY(-50%);
+
+        &-reverse {
+            transform: translateY(-50%) rotate(180deg);
+        }
     }
 
     .meta {
@@ -35,7 +39,50 @@
     }
 
     .content {
-        padding: 0 15px 15px 15px;
+        padding: 0 0 15px 15px;
+    }
+
+    .footer {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 15px;
+
+        a {
+            display: flex;
+            justify-content: center;
+            align-items: center; 
+            height: 40px;
+        }
+
+        .apply {
+            background-color: $black;
+            color: $white;
+            padding: 0px 35px;
+            font-size: 12px;
+            text-transform: uppercase;
+        }
+
+        .share {
+            display: flex;
+        }
+
+        .twitter, .facebook {
+            width: 40px;
+
+            img {
+                width: 18px;
+            }
+        }
+
+        .twitter {
+            background-color: $twitter-blue;
+            margin-right: 10px;
+        }
+
+        .facebook {
+            background-color: $facebook-blue;
+        }
+
     }
 
 

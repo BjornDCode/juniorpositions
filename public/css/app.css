@@ -202,6 +202,11 @@ h3 {
           transform: translateY(-50%);
 }
 
+.job .icon-reverse {
+  -webkit-transform: translateY(-50%) rotate(180deg);
+          transform: translateY(-50%) rotate(180deg);
+}
+
 .job .meta {
   padding: 0 0 15px 15px;
   display: -webkit-box;
@@ -220,6 +225,62 @@ h3 {
 }
 
 .job .content {
-  padding: 0 15px 15px 15px;
+  padding: 0 0 15px 15px;
+}
+
+.job .footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 15px;
+}
+
+.job .footer a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 40px;
+}
+
+.job .footer .apply {
+  background-color: #242424;
+  color: #fff;
+  padding: 0px 35px;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.job .footer .share {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.job .footer .twitter,
+.job .footer .facebook {
+  width: 40px;
+}
+
+.job .footer .twitter img,
+.job .footer .facebook img {
+  width: 18px;
+}
+
+.job .footer .twitter {
+  background-color: #1DA1F2;
+  margin-right: 10px;
+}
+
+.job .footer .facebook {
+  background-color: #3B5998;
 }
 

@@ -26,4 +26,36 @@ class JobTest extends TestCase
         $this->assertInstanceOf('Illuminate\Database\Eloquent\Collection', $job->skills);
     }
 
+    /** @test */
+    public function it_knows_its_own_url()
+    {
+        $job = factory('App\Job')->create();
+
+        $testUrl = url('/') . '/job/' . $job->id;
+
+        $this->assertEquals($testUrl, $job->ownUrl());
+    }
+
+    /** @test */
+    public function it_can_create_a_twitter_share_url()
+    {
+        $job = factory('App\Job')->create();
+
+        $jobTitleSlug = str_slug($job->title, '+');
+
+        $testUrl = "https://twitter.com/home?status=Company+is+looking+for+a+${jobTitleSlug}+in+City+{$job->ownUrl()}";
+
+        $this->assertEquals($testUrl, $job->twitterUrl());
+    }
+
+    /** @test */
+    public function it_can_create_a_facebook_share_url()
+    {
+        $job = factory('App\Job')->create();
+
+        $testUrl = "https://www.facebook.com/sharer/sharer.php?u={$job->ownUrl()}";
+
+        $this->assertEquals($testUrl, $job->facebookUrl());
+    }
+
 }

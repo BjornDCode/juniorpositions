@@ -14197,9 +14197,20 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    props: ['show', 'description']
+    props: ['attributes', 'show', 'twitterUrl', 'facebookUrl']
 });
 
 /***/ }),
@@ -14211,8 +14222,38 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _vm.show
-    ? _c("div", { staticClass: "content" }, [
-        _c("p", [_vm._v(_vm._s(_vm.description))])
+    ? _c("div", [
+        _c("p", [_vm._v(_vm._s(_vm.attributes.description))]),
+        _vm._v(" "),
+        _c("div", { staticClass: "footer" }, [
+          _c(
+            "a",
+            { staticClass: "apply", attrs: { href: _vm.attributes.url } },
+            [_vm._v("Apply")]
+          ),
+          _vm._v(" "),
+          _c("div", { staticClass: "share" }, [
+            _c(
+              "a",
+              { staticClass: "twitter", attrs: { href: _vm.twitterUrl } },
+              [
+                _c("img", {
+                  attrs: { src: "/images/twitter.svg", alt: "Twitter" }
+                })
+              ]
+            ),
+            _vm._v(" "),
+            _c(
+              "a",
+              { staticClass: "facebook", attrs: { href: _vm.facebookUrl } },
+              [
+                _c("img", {
+                  attrs: { src: "/images/facebook.svg", alt: "Facebook" }
+                })
+              ]
+            )
+          ])
+        ])
       ])
     : _vm._e()
 }
@@ -14306,7 +14347,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    props: ['attributes'],
+    props: ['attributes', 'twitterUrl', 'facebookUrl'],
 
     computed: {
         isOpen: function isOpen() {
@@ -14318,6 +14359,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             }
 
             return '/job/' + this.attributes.id;
+        },
+        iconClass: function iconClass() {
+            if (this.isOpen) {
+                return 'icon icon-reverse';
+            }
+
+            return 'icon';
         }
     }
 });
@@ -14339,7 +14387,7 @@ var render = function() {
           _c("h3", [_vm._v(_vm._s(_vm.attributes.title))])
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: "icon" }, [
+        _c("div", { class: _vm.iconClass }, [
           _c("img", { attrs: { src: "/images/arrow.svg", alt: "Arrow Down" } })
         ])
       ]),
@@ -14349,7 +14397,7 @@ var render = function() {
           _vm._v(
             "\n            " +
               _vm._s(_vm.attributes.company.name) +
-              " - Location, CO\n        "
+              " - Location, COUTRY\n        "
           )
         ]),
         _vm._v(" "),
@@ -14369,10 +14417,15 @@ var render = function() {
       _vm._v(" "),
       _c(
         "div",
-        { staticClass: "wrapper" },
+        { staticClass: "content wrapper" },
         [
           _c("router-view", {
-            attrs: { show: _vm.isOpen, description: _vm.attributes.description }
+            attrs: {
+              attributes: _vm.attributes,
+              show: _vm.isOpen,
+              "twitter-url": _vm.twitterUrl,
+              "facebook-url": _vm.facebookUrl
+            }
           })
         ],
         1

@@ -4,28 +4,28 @@
             <div class="wrapper">
                 <h3>{{ attributes.title }}</h3>
             </div>
-            <div class="icon">
+            <div :class="iconClass">
                 <img src="/images/arrow.svg" alt="Arrow Down">
             </div>
         </router-link>
         <div class="meta wrapper">
             <div>
-                {{ attributes.company.name }} - Location, CO
+                {{ attributes.company.name }} - Location, COUTRY
             </div>
             <div v-if="attributes.skills.length">
                 Skills: 
                 <span v-for="skill in attributes.skills">{{skill.name}}, </span>
             </div>
         </div>
-        <div class="wrapper">
-            <router-view :show="isOpen" :description="attributes.description"></router-view>
+        <div class="content wrapper">
+            <router-view :attributes="attributes" :show="isOpen" :twitter-url="twitterUrl" :facebook-url="facebookUrl"></router-view>
         </div>
     </li>
 </template>
 
 <script>
     export default {
-        props: ['attributes'],
+        props: ['attributes', 'twitterUrl', 'facebookUrl'],
 
         computed: {
             isOpen() {
@@ -38,6 +38,14 @@
                 }
 
                 return '/job/' + this.attributes.id;
+            },
+
+            iconClass() {
+                if (this.isOpen) {
+                    return 'icon icon-reverse'
+                }
+
+                return 'icon'
             }
         }
     }
