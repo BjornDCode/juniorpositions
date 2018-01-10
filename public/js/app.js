@@ -14228,7 +14228,10 @@ var render = function() {
         _c("div", { staticClass: "footer" }, [
           _c(
             "a",
-            { staticClass: "apply", attrs: { href: _vm.attributes.url } },
+            {
+              staticClass: "apply",
+              attrs: { href: _vm.attributes["apply_url"] }
+            },
             [_vm._v("Apply")]
           ),
           _vm._v(" "),

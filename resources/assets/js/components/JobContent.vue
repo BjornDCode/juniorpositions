@@ -2,7 +2,7 @@
     <div v-if="show">
         <p>{{ attributes.description }}</p>
         <div class="footer">
-            <a :href="attributes.url" class="apply">Apply</a>
+            <a :href="attributes['apply_url']" class="apply">Apply</a>
             <div class="share">
                 <a :href="twitterUrl" class="twitter">
                     <img src="/images/twitter.svg" alt="Twitter">

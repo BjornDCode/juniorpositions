@@ -6,7 +6,7 @@ $factory->define(App\Job::class, function (Faker $faker) {
     return [
         'title' => $faker->jobTitle,
         'description' => $faker->text,
-        'url' => $faker->url,
+        'apply_url' => $faker->url,
         'company_id' => function () {
             return factory('App\Company')->create()->id;
         }
