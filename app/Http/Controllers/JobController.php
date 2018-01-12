@@ -12,10 +12,7 @@ class JobController extends Controller
     {
         $jobs = Job::latest()
                 ->with(['company', 'skills'])
-                ->get()
-                ->groupBy(function ($job) {
-                    return $job->created_at->format('F');
-                });
+                ->paginate(25);
 
         return view('jobs.index', compact('jobs'));
     }

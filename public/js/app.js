@@ -14356,7 +14356,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    props: ['attributes', 'twitterUrl', 'facebookUrl', 'ownUrl'],
+    props: ['attributes', 'twitterUrl', 'facebookUrl', 'ownUrl', 'currentPage'],
 
     computed: {
         isOpen: function isOpen() {
@@ -14364,7 +14364,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         },
         url: function url() {
             if (this.isOpen) {
-                return '/';
+                return '/?page=' + this.currentPage;
             }
 
             return '/job/' + this.attributes.id;
@@ -14406,7 +14406,7 @@ var render = function() {
           _vm._v(
             "\n            " +
               _vm._s(_vm.attributes.company.name) +
-              " - Location, COUTRY\n        "
+              " - Location, COUNTRY\n        "
           )
         ]),
         _vm._v(" "),

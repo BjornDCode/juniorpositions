@@ -12,14 +12,16 @@
 @section('content')
     <div class="container">
         <ul class="jobs">
-            @foreach($jobs as $date => $month)
-                <h2>
-                    {{$date}} 
-                </h2>
-                @foreach($month as $job)
-                    <job :attributes="{{$job}}" twitter-url="{{$job->twitterUrl()}}" facebook-url="{{$job->facebookUrl()}}" own-url="{{$job->ownUrl()}}"></job>
-                @endforeach
+            @foreach($jobs as $job)
+                <job :attributes="{{$job}}" 
+                     twitter-url="{{$job->twitterUrl()}}" 
+                     facebook-url="{{$job->facebookUrl()}}" 
+                     own-url="{{$job->ownUrl()}}" 
+                     current-page="{{ $jobs->currentPage() }}"
+                ></job>
             @endforeach
+
+            {{ $jobs->links() }}
         </ul>
     </div>
 @endsection

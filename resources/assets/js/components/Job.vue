@@ -10,7 +10,7 @@
         </router-link>
         <div class="meta wrapper">
             <div>
-                {{ attributes.company.name }} - Location, COUTRY
+                {{ attributes.company.name }} - Location, COUNTRY
             </div>
             <div v-if="attributes.skills.length">
                 Skills: 
@@ -25,7 +25,7 @@
 
 <script>
     export default {
-        props: ['attributes', 'twitterUrl', 'facebookUrl', 'ownUrl'],
+        props: ['attributes', 'twitterUrl', 'facebookUrl', 'ownUrl', 'currentPage'],
 
         computed: {
             isOpen() {
@@ -34,7 +34,7 @@
 
             url() {
                 if (this.isOpen) {
-                    return '/';
+                    return `/?page=${this.currentPage}`;
                 }
 
                 return '/job/' + this.attributes.id;
