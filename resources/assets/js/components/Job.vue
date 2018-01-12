@@ -25,7 +25,7 @@
 
 <script>
     export default {
-        props: ['attributes', 'twitterUrl', 'facebookUrl'],
+        props: ['attributes', 'twitterUrl', 'facebookUrl', 'ownUrl'],
 
         computed: {
             isOpen() {
@@ -47,6 +47,6 @@
 
                 return 'icon'
             }
-        }
+        },
     }
 </script>

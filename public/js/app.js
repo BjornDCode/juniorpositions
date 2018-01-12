@@ -14350,7 +14350,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    props: ['attributes', 'twitterUrl', 'facebookUrl'],
+    props: ['attributes', 'twitterUrl', 'facebookUrl', 'ownUrl'],
 
     computed: {
         isOpen: function isOpen() {

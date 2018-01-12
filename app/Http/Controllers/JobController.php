@@ -10,7 +10,12 @@ class JobController extends Controller
     
     public function index() 
     {
-        $jobs = Job::with(['company', 'skills'])->get();
+        $jobs = Job::latest()
+                ->with(['company', 'skills'])
+                ->get()
+                ->groupBy(function ($job) {
+                    return $job->created_at->format('F');
+                });
 
         return view('jobs.index', compact('jobs'));
     }
