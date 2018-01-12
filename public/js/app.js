@@ -14230,7 +14230,7 @@ var render = function() {
             "a",
             {
               staticClass: "apply",
-              attrs: { href: _vm.attributes["apply_url"] }
+              attrs: { href: _vm.attributes["apply_url"], target: "_blank" }
             },
             [_vm._v("Apply")]
           ),
@@ -14238,7 +14238,10 @@ var render = function() {
           _c("div", { staticClass: "share" }, [
             _c(
               "a",
-              { staticClass: "twitter", attrs: { href: _vm.twitterUrl } },
+              {
+                staticClass: "twitter",
+                attrs: { href: _vm.twitterUrl, target: "_blank" }
+              },
               [
                 _c("img", {
                   attrs: { src: "/images/twitter.svg", alt: "Twitter" }
@@ -14248,7 +14251,10 @@ var render = function() {
             _vm._v(" "),
             _c(
               "a",
-              { staticClass: "facebook", attrs: { href: _vm.facebookUrl } },
+              {
+                staticClass: "facebook",
+                attrs: { href: _vm.facebookUrl, target: "_blank" }
+              },
               [
                 _c("img", {
                   attrs: { src: "/images/facebook.svg", alt: "Facebook" }
