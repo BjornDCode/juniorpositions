@@ -17,7 +17,7 @@
                     <a href="/job/{{ $job->id }}">
                         <h3>{{ $job->title }}</h3>
                     </a>
-                    <div class="meta flex">
+                    <div class="meta info">
                         <div>
                             {{ $job->company->name }} - Minnosota, Country
                         </div>

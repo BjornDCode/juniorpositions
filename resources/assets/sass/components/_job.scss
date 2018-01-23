@@ -13,18 +13,17 @@
         margin-bottom: 10px;
     }
 
-    .flex {
+    .info {
+        display: flex;
+        justify-content: space-between;
+
         div {
             max-width: 50%;
         }   
     }
 
     .info {
-        margin-bottom: 20px;
-
-        > div {
-            margin-bottom: 10px;
-        }
+        
     }
 
     .cta {
@@ -83,7 +82,27 @@
     }
 
     @include breakpoint(tablet) {
+        .footer {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
 
+}
+
+.single-job {
+
+    .info {
+        display: block;
+        margin-bottom: 20px;
+
+        > div {
+            max-width: none;
+            margin-bottom: 10px;
+        }
+    }
+
+    @include breakpoint(tablet) {
         .info {
             margin-bottom: 0;
 
@@ -91,11 +110,5 @@
                 margin-bottom: 0;
             }
         }
-
-        .footer {
-            display: flex;
-            justify-content: space-between;
-        }
     }
-
 }
