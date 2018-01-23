@@ -13,4 +13,6 @@
 
 Route::get('/', 'JobController@index');
 
-Route::get('/job/{vue_capture?}', 'JobController@index')->where('vue_capture', '[\/\w\.-]*');
+Route::get('/job/{job}', 'JobController@show');
+
+Route::get('/{category}', 'JobController@index');

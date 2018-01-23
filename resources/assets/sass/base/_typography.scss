@@ -12,10 +12,18 @@ p {
     color: $grey-dark;
     font-size: 14px;
     line-height: 20px;
+    margin-bottom: 20px;
+}
+
+.meta {
+    font-size: 12px;
+    color: $grey-medium-dark;
+    font-weight: 400;
+    line-height: 1.2;
 }
 
 h3 {
-    font-weight: 500;
+    font-weight: 600;
     font-size: 18px;
     line-height: 24px;
 }

@@ -24,9 +24,26 @@ class JobsTest extends TestCase
     /** @test */
     public function a_user_can_view_a_single_job()
     {
-        // Move to VUE
+        
+        $job = factory('App\Job')->create();
 
-        $this->assertTrue(true);
+        $this->get('/job/' . $job->id)
+             ->assertSee($job->title);
+
+    }
+    
+    /** @test */
+    public function a_user_can_filter_jobs_by_jobtype()
+    {
+
+        $category = factory('App\Category')->create();
+        $jobInCategory = factory('App\Job')->create(['category_id' => $category->id]);
+        $jobNotInCategory = factory('App\Job')->create();
+
+        $this->get('/' . $category->name)
+             ->assertSee($jobInCategory->title)
+             ->assertDontSee($jobNotInCategory->title);
+
     }
 
 }

@@ -1,5 +1,6 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
+import VueMeta from 'vue-meta';
 import JobContent from './components/JobContent';
 
 const routes = [
@@ -15,6 +16,7 @@ const router = new VueRouter({
 });
 
 Vue.use(VueRouter);
+Vue.use(VueMeta);
 
 window.Vue = require('vue');
 

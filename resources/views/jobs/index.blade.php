@@ -2,9 +2,9 @@
 
 @section('header')
         <title>{{ config('app.name', 'Junior Positions') }}</title>
-        <meta property="og:url" content="{{ url('/') }}" class="og-url" />
+        <meta property="og:url" content="{{ url('/') }}" />
         <meta property="og:type" content="article" />
-        <meta property="og:title" content="Junior Positions | Find your job" />
+        <meta property="og:title" content="Junior Positions | Find your first job" />
         <meta property="og:description" content="Easily find available junior positions in development, design, marketing, sales and other industries" />
         <meta property="og:image" content="http://via.placeholder.com/1200x630" />
 @endsection
@@ -13,12 +13,21 @@
     <div class="container">
         <ul class="jobs">
             @foreach($jobs as $job)
-                <job :attributes="{{$job}}" 
-                     twitter-url="{{$job->twitterUrl()}}" 
-                     facebook-url="{{$job->facebookUrl()}}" 
-                     own-url="{{$job->ownUrl()}}" 
-                     current-page="{{ $jobs->currentPage() }}"
-                ></job>
+                <li class="job">
+                    <a href="/job/{{ $job->id }}">
+                        <h3>{{ $job->title }}</h3>
+                    </a>
+                    <div class="meta flex">
+                        <div>
+                            {{ $job->company->name }} - Minnosota, Country
+                        </div>
+                        <div>
+                            @foreach($job->skills as $skill)
+                                <span>{{ $skill->name }}</span>, 
+                            @endforeach
+                        </div>
+                    </div>
+                </li>
             @endforeach
 
             {{ $jobs->links() }}

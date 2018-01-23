@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Job extends Model
 {
+
+    protected $with = ['company', 'skills'];
     
     public function company() 
     {
