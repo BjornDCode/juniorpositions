@@ -35,15 +35,13 @@ class JobsTest extends TestCase
     /** @test */
     public function a_user_can_filter_jobs_by_jobtype()
     {
-
-        $category = factory('App\Category')->create();
+        $category = factory('App\Category')->create(['id' => 1]);
         $jobInCategory = factory('App\Job')->create(['category_id' => $category->id]);
-        $jobNotInCategory = factory('App\Job')->create();
+        $jobNotInCategory = factory('App\Job')->create(['category_id' => 2]);
 
-        $this->get('/' . $category->name)
+        $this->get("/{$category->title}")
              ->assertSee($jobInCategory->title)
              ->assertDontSee($jobNotInCategory->title);
-
     }
 
 }
