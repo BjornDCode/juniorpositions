@@ -25,7 +25,10 @@
                         @endforeach
                     </div>
                     <div>
-                        {{ $job->company->name }} - Minnosota, Country
+                        Company: {{ $job->company->name }}
+                    </div>
+                    <div>
+                        Location: Minnosota, Country
                     </div>
                 </div>
                 <div class="cta">
