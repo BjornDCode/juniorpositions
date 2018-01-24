@@ -1,5 +1,19 @@
 body {
     background-color: $grey-medium;
+
+    &.no-scroll {
+        height: 100%;
+        overflow: hidden;
+    }
+}
+
+.content {
+    padding-top: 45px;
+    transition: transform 200ms;
+
+    &.shifted {
+        transform: translateX(-70px);
+    }
 }
 
 .container {

@@ -11,7 +11,7 @@ $factory->define(App\Job::class, function (Faker $faker) {
             return factory('App\Company')->create()->id;
         },
         'category_id' => function () {
-            return factory('App\Category')->create()->id;
+            return mt_rand(1, 3);
         }
     ];
 });

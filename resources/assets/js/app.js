@@ -1,22 +1,5 @@
 import Vue from 'vue';
-import VueRouter from 'vue-router';
-import VueMeta from 'vue-meta';
-import JobContent from './components/JobContent';
-
-const routes = [
-    {
-        path: '/job/:id',
-        component: JobContent
-    }
-];
-
-const router = new VueRouter({
-    mode: 'history',
-    routes
-});
-
-Vue.use(VueRouter);
-Vue.use(VueMeta);
+import NavBar from './components/NavBar';
 
 window.Vue = require('vue');
 
@@ -26,9 +9,8 @@ window.Vue = require('vue');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.component('job', require('./components/Job.vue'));
+Vue.component('nav-bar', require('./components/NavBar.vue'));
 
 const app = new Vue({
-    el: '#app',
-    router
+    el: '#app'
 });
