@@ -14,6 +14,10 @@ body {
     &.shifted {
         transform: translateX(-70px);
     }
+
+    @include breakpoint(tablet) {
+        padding-top: 20px;
+    }
 }
 
 .container {
@@ -28,4 +32,10 @@ body {
         width: 600px;
     }
 
+}
+
+@include breakpoint(tablet) {
+    .hide-desktop {
+        display: none;
+    }
 }

@@ -11569,9 +11569,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     mounted: function mounted() {
         var _this = this;
 
-        window.addEventListener('scroll', function (e) {
-            return _this.handleScroll(e);
-        });
+        if (window.innerWidth < 768) {
+            window.addEventListener('scroll', function (e) {
+                return _this.handleScroll(e);
+            });
+        }
     },
     data: function data() {
         return {

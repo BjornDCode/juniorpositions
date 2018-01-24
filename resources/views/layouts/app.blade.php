@@ -17,7 +17,7 @@
             <aside class="nav-bar" :class="{ visible: visible }">
                 <a href="/" class="logo">Logo</a>
                 <button 
-                    class="hamburger hamburger--spring" 
+                    class="hamburger hamburger--spring hide-desktop" 
                     :class="{'is-active': sidebarOpen}"
                     type="button" 
                     @click.prevent="toggleSidebar">

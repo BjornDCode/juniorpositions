@@ -285,6 +285,12 @@ body.no-scroll {
           transform: translateX(-70px);
 }
 
+@media (min-width: 768px) {
+  .content {
+    padding-top: 20px;
+  }
+}
+
 .container {
   padding: 10px;
 }
@@ -299,6 +305,12 @@ body.no-scroll {
 @media (min-width: 1024px) {
   .container {
     width: 600px;
+  }
+}
+
+@media (min-width: 768px) {
+  .hide-desktop {
+    display: none;
   }
 }
 
@@ -604,5 +616,22 @@ h3 {
 
 .nav-bar nav a.twitter {
   display: none;
+}
+
+@media (min-width: 768px) {
+  .nav-bar {
+    height: 70px;
+    width: 70px;
+  }
+
+  .nav-bar nav {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    height: calc(100vh - 70px);
+    top: 70px;
+    padding-top: 50px;
+    right: auto;
+    left: 0;
+  }
 }
 

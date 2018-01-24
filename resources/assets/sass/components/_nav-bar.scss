@@ -69,5 +69,18 @@
 
     }
     
+    @include breakpoint(tablet) {
+        height: 70px;
+        width: 70px;
+
+        nav {
+            transform: translateX(0);
+            height: calc(100vh - 70px);
+            top: 70px;
+            padding-top: 50px;
+            right: auto;
+            left: 0;
+        }
+    }
 
 }

@@ -1,7 +1,9 @@
 <script>
     export default {
         mounted() {
-            window.addEventListener('scroll', e => this.handleScroll(e));
+            if (window.innerWidth < 768) {
+                window.addEventListener('scroll', e => this.handleScroll(e));
+            }
         },
 
         data() {
