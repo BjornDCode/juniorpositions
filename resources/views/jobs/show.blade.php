@@ -13,7 +13,7 @@
     <div class="container">
         <div class="job single-job">
             <h3>{{ $job->title }}</h3>
-            <div class="content">
+            <div>
                 <p>{{ $job->description }}</p>
             </div>
             <div class="footer">
