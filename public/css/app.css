@@ -597,6 +597,8 @@ h3 {
       -ms-flex-align: center;
           align-items: center;
   height: 70px;
+  -webkit-transition: background-color 200ms;
+  transition: background-color 200ms;
 }
 
 .nav-bar nav a:hover,
