@@ -17,7 +17,10 @@ class JobController extends Controller
             $jobs = Job::latest()->paginate(25);
         }
 
-        return view('jobs.index', compact('jobs'));
+        return view('jobs.index', [
+            'jobs' => $jobs,
+            'category' => $category
+        ]);
     }
 
     public function show(Job $job) 

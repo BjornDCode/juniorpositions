@@ -11,6 +11,11 @@
 
 @section('content')
     <div class="container">
+        @if ($category->exists)
+            <h1>Jobs in {{ ucfirst($category->title) }}</h1>
+        @else 
+            <h1>All Junior Positions</h1>
+        @endif
         <ul class="jobs">
             @foreach($jobs as $job)
                 <li class="job">
