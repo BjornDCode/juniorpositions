@@ -338,6 +338,16 @@ p {
   line-height: 1.2;
 }
 
+.meta a {
+  color: #AEAEAE;
+  -webkit-transition: color 200ms;
+  transition: color 200ms;
+}
+
+.meta a:hover {
+  color: #242424;
+}
+
 h1 {
   font-weight: 600;
   font-size: 25px;

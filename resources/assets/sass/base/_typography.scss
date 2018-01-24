@@ -20,6 +20,15 @@ p {
     color: $grey-medium-dark;
     font-weight: 400;
     line-height: 1.2;
+
+    a {
+        color: $grey-medium-dark;
+        transition: color 200ms;
+
+        &:hover {
+            color: $black;
+        }
+    }
 }
 
 h1 {
