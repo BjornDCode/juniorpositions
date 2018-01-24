@@ -3,7 +3,11 @@
 use Faker\Generator as Faker;
 
 $factory->define(App\Company::class, function (Faker $faker) {
+
+    $name = $faker->company;
+
     return [
-        'name' => $faker->company
+        'name' => $name,
+        'slug' => str_slug($name)
     ];
 });

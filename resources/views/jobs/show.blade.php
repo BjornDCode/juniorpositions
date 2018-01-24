@@ -25,7 +25,8 @@
                         @endforeach
                     </div>
                     <div>
-                        Company: {{ $job->company->name }}
+                        Company: 
+                        <a href="/company/{{ $job->company->slug }}">{{ $job->company->name }}</a>
                     </div>
                     <div>
                         Location: Minnosota, Country

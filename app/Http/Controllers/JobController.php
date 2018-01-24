@@ -3,24 +3,16 @@
 namespace App\Http\Controllers;
 
 use App\Job;
-use App\Category;
 use Illuminate\Http\Request;
 
 class JobController extends Controller
 {
     
-    public function index(Category $category) 
+    public function index() 
     {
-        if ($category->exists) {
-            $jobs = $category->jobs()->latest()->paginate(25);
-        } else {
-            $jobs = Job::latest()->paginate(25);
-        }
+        $jobs = Job::latest()->paginate(25);
 
-        return view('jobs.index', [
-            'jobs' => $jobs,
-            'category' => $category
-        ]);
+        return view('jobs.index', compact('jobs'));
     }
 
     public function show(Job $job) 

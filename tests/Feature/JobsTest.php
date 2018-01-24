@@ -44,4 +44,16 @@ class JobsTest extends TestCase
              ->assertDontSee($jobNotInCategory->title);
     }
 
+    /** @test */
+    public function a_user_can_filter_jobs_by_company()
+    {
+        $company = factory('App\Company')->create();
+        $jobAtCompany = factory('App\Job')->create(['company_id' => $company->id]);
+        $jobNotAtCompany = factory('App\Job')->create();
+
+        $this->get("/company/{$company->slug}")
+             ->assertSee($jobAtCompany->title)
+             ->assertDontSee($jobNotAtCompany->title);
+    }
+
 }

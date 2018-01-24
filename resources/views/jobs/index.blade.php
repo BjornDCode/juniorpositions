@@ -11,8 +11,10 @@
 
 @section('content')
     <div class="container">
-        @if ($category->exists)
+        @if (isset($category))
             <h1>Jobs in {{ ucfirst($category->title) }}</h1>
+        @elseif (isset($company))
+           <h1>Jobs at {{ $company->name }}</h1>
         @else 
             <h1>All Junior Positions</h1>
         @endif
@@ -24,7 +26,8 @@
                     </a>
                     <div class="meta info">
                         <div>
-                            {{ $job->company->name }} - Minnosota, Country
+                            <a href="/company/{{ $job->company->slug }}">{{ $job->company->name }}</a> 
+                            - Minnosota, Country
                         </div>
                         <div>
                             @foreach($job->skills as $skill)
