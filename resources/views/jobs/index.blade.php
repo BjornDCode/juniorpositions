@@ -35,7 +35,7 @@
                         </div>
                         <div>
                             @foreach($job->skills as $skill)
-                                <span>{{ $skill->name }}</span>, 
+                                <a href="/skill/{{ $skill->slug }}">{{ $skill->name }}</a>, 
                             @endforeach
                         </div>
                     </div>

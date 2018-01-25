@@ -81,4 +81,18 @@ class JobsTest extends TestCase
 
     }
 
+    /** @test */
+    public function a_user_can_filter_jobs_by_skills()
+    {
+        $jobWithSkill = factory('App\Job')->create();
+        $skill = $jobWithSkill->skills()->create(['name' => 'skill', 'slug' => 'skill']);
+
+        $jobNotWithSkill = factory('App\Job')->create();
+        
+        $this->get("/skill/{$skill->slug}")
+             ->assertSee($jobWithSkill->title)
+             ->assertDontSee($jobNotWithSkill->title);
+
+    }
+
 }
