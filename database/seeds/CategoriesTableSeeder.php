@@ -12,14 +12,15 @@ class CategoriesTableSeeder extends Seeder
     public function run()
     {
         $categories = [
-            'development',
-            'design',
-            'sales'
+            'Development',
+            'Design',
+            'Sales'
         ];
 
         foreach ($categories as $category) {
             DB::table('categories')->insert([
                 'title' => $category,
+                'slug' => str_slug($category),
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s')
             ]);

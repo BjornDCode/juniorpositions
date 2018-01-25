@@ -12,7 +12,7 @@
         </button>
         <nav :class="{ open: sidebarOpen }">
             @foreach($categories as $category)
-                <a href="/{{ $category->title }}" class="{{ Request::is($category->title) ? 'active' : '' }}">
+                <a href="/{{ $category->slug }}" class="{{ Request::is($category->slug) ? 'active' : '' }}">
                     <img src="/images/{{ $category->title }}.svg" alt="{{ $category->title }}">
                     <span>{{ $category->title }}</span>
                 </a>
