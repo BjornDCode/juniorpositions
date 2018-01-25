@@ -17,7 +17,7 @@ class CountryController extends Controller
         
         return view('jobs.index', [
             'jobs' => $jobs,
-            'country' => $country
+            'headline' => "Jobs in {$country->name}"
         ]);
     }
 

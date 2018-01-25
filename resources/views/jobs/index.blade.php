@@ -11,14 +11,8 @@
 
 @section('content')
     <div class="container">
-        @if (isset($category))
-            <h1>Jobs in {{ ucfirst($category->title) }}</h1>
-        @elseif (isset($company))
-           <h1>Jobs at {{ $company->name }}</h1>
-        @elseif (isset($city))
-            <h1>Jobs in {{ $city->name }}</h1>
-        @elseif (isset($country))
-            <h1>Jobs in {{ $country->name }}</h1>
+        @if (isset($headline))
+            <h1>{{ $headline }}</h1>
         @else 
             <h1>All Junior Positions</h1>
         @endif

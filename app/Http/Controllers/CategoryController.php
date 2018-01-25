@@ -14,7 +14,7 @@ class CategoryController extends Controller
 
         return view('jobs.index', [
             'jobs' => $jobs,
-            'category' => $category
+            'headline' => "Jobs in {$category->title}"
         ]);
     }
 

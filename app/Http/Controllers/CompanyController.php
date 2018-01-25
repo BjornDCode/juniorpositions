@@ -14,7 +14,7 @@ class CompanyController extends Controller
 
         return view('jobs.index', [
             'jobs' => $jobs,
-            'company' => $company
+            'headline' => "Jobs at {$company->name}"
         ]);
     }
 

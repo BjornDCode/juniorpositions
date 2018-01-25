@@ -15,7 +15,7 @@ class CityController extends Controller
 
         return view('jobs.index', [
             'jobs' => $jobs,
-            'city' => $city
+            'headline' => "Jobs in {$city->name}"
         ]);
     }
 
