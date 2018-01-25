@@ -26,10 +26,18 @@
                     </div>
                     <div>
                         Company: 
-                        <a href="/company/{{ $job->company->slug }}">{{ $job->company->name }}</a>
+                        <a href="/company/{{ $job->company->slug }}">
+                            {{ $job->company->name }}
+                        </a>
                     </div>
                     <div>
-                        Location: Minnosota, Country
+                        Location: 
+                        <a href="/location/{{ $job->city->country->slug }}/{{ $job->city->slug }}">
+                            {{ $job->city->name }}
+                        </a>, 
+                        <a href="/location/{{ $job->city->country->slug }}">
+                            {{ $job->city->country->name }}
+                        </a>
                     </div>
                 </div>
                 <div class="cta">

@@ -34,7 +34,7 @@
                             - 
                             <a href="/location/{{ $job->city->country->slug }}/{{ $job->city->slug }}">
                                 {{ $job->city->name }}
-                            </a>, 
+                            </a>,
                             <a href="/location/{{ $job->city->country->slug }}">
                                 {{ $job->city->country->name }}
                             </a>
