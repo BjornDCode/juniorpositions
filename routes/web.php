@@ -17,4 +17,7 @@ Route::get('/job/{job}', 'JobController@show');
 
 Route::get('/company/{company}', 'CompanyController@show');
 
+Route::get('/location/{country}', 'CountryController@show');
+Route::get('/location/{country}/{city}', 'CityController@show');
+
 Route::get('/{category}', 'CategoryController@show');

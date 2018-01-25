@@ -56,4 +56,29 @@ class JobsTest extends TestCase
              ->assertDontSee($jobNotAtCompany->title);
     }
 
+    /** @test */
+    public function a_user_can_filter_jobs_by_city()
+    {
+        $city = factory('App\City')->create();
+        $jobInCity = factory('App\Job')->create(['city_id' => $city->id]);
+        $jobNotInCity = factory('App\Job')->create();
+
+        $this->get("/location/{$city->country->slug}/{$city->slug}")
+             ->assertSee($jobInCity->title)
+             ->assertDontSee($jobNotInCity->title);
+    }
+
+    /** @test */
+    public function a_user_can_filter_jobs_by_country()
+    {
+        $city = factory('App\City')->create();
+        $jobInCountry = factory('App\Job')->create(['city_id' => $city->id]);
+        $jobNotInCountry = factory('App\Job')->create();
+
+        $this->get("/location/{$city->country->slug}")
+             ->assertSee($jobInCountry->title)
+             ->assertDontSee($jobNotInCountry->title);
+
+    }
+
 }
