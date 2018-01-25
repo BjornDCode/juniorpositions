@@ -79,9 +79,18 @@
     }
 
     @include breakpoint(tablet) {
+
         .footer {
             display: flex;
             justify-content: space-between;
+        }
+    }
+
+    @include breakpoint(desktop) {
+        .info {
+            div {
+                max-width: none;
+            }
         }
     }
 

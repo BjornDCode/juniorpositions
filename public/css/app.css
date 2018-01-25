@@ -465,6 +465,12 @@ h3 {
   }
 }
 
+@media (min-width: 1024px) {
+  .job .info div {
+    max-width: none;
+  }
+}
+
 .single-job .info {
   display: block;
   margin-bottom: 20px;
