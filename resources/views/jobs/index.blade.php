@@ -15,6 +15,10 @@
             <h1>Jobs in {{ ucfirst($category->title) }}</h1>
         @elseif (isset($company))
            <h1>Jobs at {{ $company->name }}</h1>
+        @elseif (isset($city))
+            <h1>Jobs in {{ $city->name }}</h1>
+        @elseif (isset($country))
+            <h1>Jobs in {{ $country->name }}</h1>
         @else 
             <h1>All Junior Positions</h1>
         @endif
@@ -27,7 +31,13 @@
                     <div class="meta info">
                         <div>
                             <a href="/company/{{ $job->company->slug }}">{{ $job->company->name }}</a> 
-                            - Minnosota, Country
+                            - 
+                            <a href="/location/{{ $job->city->country->slug }}/{{ $job->city->slug }}">
+                                {{ $job->city->name }}
+                            </a>, 
+                            <a href="/location/{{ $job->city->country->slug }}">
+                                {{ $job->city->country->name }}
+                            </a>
                         </div>
                         <div>
                             @foreach($job->skills as $skill)

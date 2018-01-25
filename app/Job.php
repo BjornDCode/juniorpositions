@@ -19,6 +19,11 @@ class Job extends Model
         return $this->belongsToMany(Skill::class);
     }
 
+    public function city() 
+    {
+        return $this->belongsTo(City::class);
+    }
+
     public function ownUrl() 
     {
         return url('/') . '/job/' . $this->id;
