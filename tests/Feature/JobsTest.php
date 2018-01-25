@@ -27,7 +27,7 @@ class JobsTest extends TestCase
         
         $job = factory('App\Job')->create();
 
-        $this->get('/job/' . $job->id)
+        $this->get('/jobs/' . $job->id)
              ->assertSee($job->title);
 
     }
