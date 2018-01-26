@@ -10,7 +10,7 @@ use Illuminate\Database\Eloquent\Collection;
 class SearchFilters extends Filters
 {
     
-    protected $filters = ['company', 'skill'];
+    protected $filters = ['company', 'skill', 'title'];
 
     protected function company($slug) 
     {
@@ -36,6 +36,13 @@ class SearchFilters extends Filters
         }
 
         return $this->builder->whereIn('id', $jobIds);
+    }
+
+    public function title($string) 
+    {
+        $title = ucwords(str_replace('-', ' ', $string));
+
+        return $this->builder->where('title', 'LIKE', "%{$title}%");
     }
 
 }

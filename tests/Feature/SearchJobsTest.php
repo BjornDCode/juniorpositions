@@ -41,4 +41,15 @@ class SearchJobsTest extends TestCase
              ->assertDontSee($jobWithoutSkill->title);
     }
 
+    /** @test */
+    public function a_user_can_search_for_jobs_by_title()
+    {
+        $jobWithTitle = factory('App\Job')->create(['title' => 'Front End Developer']);
+        $jobNotWithTitle = factory('App\Job')->create();
+
+        $this->get("/jobs?title=front-end")
+             ->assertSee($jobWithTitle->title)
+             ->assertDontSee($jobNotWithTitle->title);
+    }
+
 }
