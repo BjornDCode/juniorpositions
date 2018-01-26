@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Filters\SearchFilters;
 use Illuminate\Database\Eloquent\Model;
 
 class Job extends Model
@@ -40,6 +41,11 @@ class Job extends Model
     public function facebookUrl() 
     {
         return "https://www.facebook.com/sharer/sharer.php?u={$this->ownUrl()}";
+    }
+
+    public function scopeFilter($query, SearchFilters $filters) 
+    {
+        return $filters->apply($query);
     }
 
 }

@@ -5,22 +5,14 @@ namespace App\Http\Controllers;
 use App\Job;
 use App\Company;
 use Illuminate\Http\Request;
+use App\Filters\SearchFilters;
 
 class JobController extends Controller
 {
     
-    public function index() 
+    public function index(SearchFilters $filters) 
     {
-
-        $jobs = Job::latest();
-
-        if ($companySlug = request('company')) {
-            $company = Company::where('slug', $companySlug)->firstOrFail();
-
-            $jobs->where('company_id', $company->id);
-        }
-
-        $jobs = $jobs->paginate(25);
+        $jobs = $this->getJobs($filters);
 
         return view('jobs.index', compact('jobs'));
     }
@@ -28,6 +20,13 @@ class JobController extends Controller
     public function show(Job $job) 
     {
         return view('jobs.show', compact('job'));
+    }
+
+    public function getJobs($filters) 
+    {
+        $jobs = Job::latest()->filter($filters);
+
+        return $jobs->paginate(25);
     }
 
 }
