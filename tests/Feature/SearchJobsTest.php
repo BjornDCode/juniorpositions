@@ -52,4 +52,21 @@ class SearchJobsTest extends TestCase
              ->assertDontSee($jobNotWithTitle->title);
     }
 
+    /** @test */
+    public function a_user_can_search_for_jobs_by_location()
+    {
+        $city = factory('App\City')->create();
+
+        $jobInCity = factory('App\Job')->create(['city_id' => $city->id]);
+        $jobNotInCity = factory('App\Job')->create();
+
+        $this->get("/jobs?location={$city->country->slug}")
+             ->assertSee($jobInCity->title)
+             ->assertDontSee($jobNotInCity->title);
+
+        $this->get("/jobs?location={$city->slug}")
+             ->assertSee($jobInCity->title)
+             ->assertDontSee($jobNotInCity->title);
+    }
+
 }
