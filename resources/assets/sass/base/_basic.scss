@@ -15,8 +15,18 @@ body {
         transform: translateX(-70px);
     }
 
+    &.pushed {
+        transform: translateY(285px);
+    }
+
     @include breakpoint(tablet) {
         padding-top: 20px;
+    }
+
+    @include breakpoint(desktop) {
+        &.pushed {
+            transform: translateY(235px);
+        }
     }
 }
 
@@ -34,8 +44,59 @@ body {
 
 }
 
+.flex {
+    display: flex;
+}
+
+.align-center {
+    align-items: center;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
 @include breakpoint(tablet) {
     .hide-desktop {
         display: none;
     }
+}
+
+.hide-mobile {
+    display: none;
+
+    @include breakpoint(tablet) {
+        display: block;
+    }
+}
+
+
+.button {
+    background-color: $black;
+    color: $white;
+    padding: 0 40px;
+    font-size: 12px;
+    text-transform: uppercase;
+    height: 40px;
+    transition: background-color 200ms;
+
+    &:hover {
+        background-color: lighten($black, 10%);
+    }
+}
+
+a.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button.button {
+    border: none;
+    cursor: pointer;
+    outline: none;
 }

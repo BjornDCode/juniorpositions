@@ -1,7 +1,10 @@
 import Vue from 'vue';
 import NavBar from './components/NavBar';
 
+// window.EventBus = new Vue();
 window.Vue = require('vue');
+
+Vue.prototype.EventBus = new Vue({});
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -10,7 +13,14 @@ window.Vue = require('vue');
  */
 
 Vue.component('nav-bar', require('./components/NavBar.vue'));
+Vue.component('search-bar', require('./components/SearchBar.vue'));
 
 const app = new Vue({
-    el: '#app'
+    el: '#app',
+    methods: {
+        toggle() {
+            console.log('searching')
+        }
+    }
 });
+

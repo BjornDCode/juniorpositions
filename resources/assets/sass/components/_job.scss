@@ -48,18 +48,6 @@
             }
         }
 
-        .apply {
-            background-color: $black;
-            color: $white;
-            padding: 0 40px;
-            font-size: 12px;
-            text-transform: uppercase;
-
-            &:hover {
-                background-color: lighten($black, 10%);
-            }
-        }
-
         .twitter {
             background-color: $twitter-blue;
 

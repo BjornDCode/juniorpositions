@@ -41,7 +41,7 @@
                     </div>
                 </div>
                 <div class="cta">
-                    <a href="{{ $job->apply_url }}" class="apply" target="_blank">Apply</a>
+                    <a href="{{ $job->apply_url }}" class="apply button" target="_blank">Apply</a>
                     <a href="{{ $job->twitterUrl() }}" class="social twitter" target="_blank">
                         <img src="/images/twitter.svg" alt="Twitter">
                     </a>
