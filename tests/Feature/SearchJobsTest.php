@@ -24,4 +24,21 @@ class SearchJobsTest extends TestCase
 
     }
 
+    /** @test */
+    public function a_user_can_search_for_jobs_by_skill()
+    {
+        $firstJobWithSkill = factory('App\Job')->create();
+        $firstSkill = $firstJobWithSkill->skills()->create(['name' => 'firstskill', 'slug' => 'firstskill']);
+
+        $secondJobWithSkill = factory('App\Job')->create();
+        $secondSkill = $secondJobWithSkill->skills()->create(['name' => 'secondskill', 'slug' => 'secondskill']);
+
+        $jobWithoutSkill = factory('App\Job')->create();
+
+        $this->get("/jobs?skill={$firstSkill->slug},{$secondSkill->slug}")
+             ->assertSee($firstJobWithSkill->title)
+             ->assertSee($secondJobWithSkill->title)
+             ->assertDontSee($jobWithoutSkill->title);
+    }
+
 }
