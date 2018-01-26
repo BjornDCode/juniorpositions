@@ -19,7 +19,7 @@
         <ul class="jobs">
             @foreach($jobs as $job)
                 <li class="job">
-                    <a href="/job/{{ $job->id }}">
+                    <a href="/jobs/{{ $job->id }}">
                         <h3>{{ $job->title }}</h3>
                     </a>
                     <div class="meta info">
