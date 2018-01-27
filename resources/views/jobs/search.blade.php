@@ -4,9 +4,13 @@
     @include('partials.meta')
 @endsection
 
+@section('top')
+    @include('partials.search')
+@endsection
+
 @section('content')
     <div class="container">
-        <h1>{{ $headline }}</h1>
+        <h1>Search</h1>
         <ul class="jobs">
             @foreach($jobs as $job)
                 <li class="job">

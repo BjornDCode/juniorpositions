@@ -2,13 +2,16 @@
 
 namespace App;
 
+use Laravel\Scout\Searchable;
 use App\Filters\SearchFilters;
 use Illuminate\Database\Eloquent\Model;
 
 class Job extends Model
 {
+    use Searchable;
 
-    protected $with = ['company', 'skills'];
+    protected $with = ['company', 'skills', 'city', 'city.country'];
+
     
     public function company() 
     {

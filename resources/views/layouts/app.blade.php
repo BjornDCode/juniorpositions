@@ -14,7 +14,7 @@
 
     <div id="app">
         @include('partials.navigation')
-        @include('partials.search')
+        @yield('top')
         <main class="content">
             @yield('content')
         </main>

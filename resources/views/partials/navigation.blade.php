@@ -16,6 +16,10 @@
             </button>
         </div>
         <nav :class="{ open: sidebarOpen }">
+            <a href="/jobs" class="{{ Request::is('/jobs') ? 'active' : '' }}">
+                <img src="/images/search.svg" alt="Search">
+                <span>Search</span>
+            </a>
             @foreach($categories as $category)
                 <a href="/{{ $category->slug }}" class="{{ Request::is($category->slug) ? 'active' : '' }}">
                     <img src="/images/{{ $category->title }}.svg" alt="{{ $category->title }}">

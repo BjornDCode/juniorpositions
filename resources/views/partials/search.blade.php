@@ -1,6 +1,6 @@
 <search-bar inline-template>
     <div class="search" :class="{ open: open }" @toggleSearch="toggle">
-        <form action="/jobs">
+        <form action="/search">
             <div class="flex justify-center flex-wrap">
                 <div class="group">
                     <label for="location">Location</label>

@@ -16,6 +16,8 @@ Route::get('/', 'JobController@index');
 Route::get('/jobs', 'JobController@index');
 Route::get('/jobs/{job}', 'JobController@show');
 
+Route::get('/search', 'SearchController@show');
+
 Route::get('/company/{company}', 'CompanyController@show');
 
 Route::get('/skill/{skill}', 'SkillController@show');

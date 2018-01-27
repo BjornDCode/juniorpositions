@@ -14,7 +14,7 @@ class JobController extends Controller
     {
         $jobs = $this->getJobs($filters);
 
-        return view('jobs.index', compact('jobs'));
+        return view('jobs.search', compact('jobs'));
     }
 
     public function show(Job $job) 
