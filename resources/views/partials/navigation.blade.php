@@ -16,7 +16,7 @@
             </button>
         </div>
         <nav :class="{ open: sidebarOpen }">
-            <a href="/jobs" class="{{ Request::is('/jobs') ? 'active' : '' }}">
+            <a href="/jobs" class="search-icon {{ Request::is('jobs') ? 'active' : '' }}">
                 <img src="/images/search.svg" alt="Search">
                 <span>Search</span>
             </a>

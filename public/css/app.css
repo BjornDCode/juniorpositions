@@ -707,6 +707,10 @@ h3 {
           hyphens: auto;
 }
 
+.nav-bar nav a.search-icon img {
+  max-width: 25px;
+}
+
 .nav-bar nav a.twitter {
   display: none;
 }

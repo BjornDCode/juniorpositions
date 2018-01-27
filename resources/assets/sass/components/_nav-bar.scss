@@ -50,6 +50,8 @@
                 background-color: darken($black, 10%);
             }
 
+
+
             img {
                 display: block;
                 max-width: 32px;
@@ -64,6 +66,12 @@
                 word-break: break-all;
                 text-align: center;
                 hyphens: auto;
+            }
+
+            &.search-icon {
+                img {
+                    max-width: 25px;
+                }
             }
 
             &.twitter {
