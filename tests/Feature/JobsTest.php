@@ -33,15 +33,27 @@ class JobsTest extends TestCase
     }
     
     /** @test */
-    public function a_user_can_filter_jobs_by_jobtype()
+    public function a_user_can_filter_jobs_by_category()
     {
-        $category = factory('App\Category')->create(['id' => 1]);
-        $jobInCategory = factory('App\Job')->create(['category_id' => $category->id]);
-        $jobNotInCategory = factory('App\Job')->create(['category_id' => 2]);
+        $role = factory('App\Role')->create();
+        $jobInCategory = factory('App\Job')->create(['role_id' => $role->id]);
+        $jobNotInCategory = factory('App\Job')->create(['role_id' => 2]);
 
-        $this->get("/{$category->title}")
+        $this->get("/{$role->category->slug}")
              ->assertSee($jobInCategory->title)
              ->assertDontSee($jobNotInCategory->title);
+    }
+
+    /** @test */
+    public function a_user_can_filter_jobs_by_role()
+    {
+        $role = factory('App\Role')->create();
+        $jobInRole = factory('App\Job')->create(['role_id' => $role->id]);
+        $jobNotInRole = factory('App\Job')->create();
+
+        $this->get("/{$role->category->slug}/{$role->slug}")
+             ->assertSee($jobInRole->title)
+             ->assertDontSee($jobNotInRole->title);
     }
 
     /** @test */

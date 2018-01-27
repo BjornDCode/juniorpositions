@@ -4,22 +4,22 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Category extends Model
+class Role extends Model
 {
-    
+
     public function getRouteKeyName() 
     {
         return 'slug';
     }
-
-    public function roles() 
+    
+    public function category() 
     {
-        return $this->hasMany(Role::class);   
+        return $this->belongsTo(Category::class);
     }
 
     public function jobs() 
     {
-        return $this->hasManyThrough(Job::class, Role::class);
+        return $this->hasMany(Job::class);
     }
 
 }

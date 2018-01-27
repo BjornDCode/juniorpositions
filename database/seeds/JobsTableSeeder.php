@@ -11,7 +11,9 @@ class JobsTableSeeder extends Seeder
      */
     public function run()
     {
-        factory('App\Job', 10)->create()->each(function($foo) {
+        factory('App\Job', 10)->create([
+            'role_id' => mt_rand(1,4)
+        ])->each(function($foo) {
             $foo->skills()->save(factory('App\Skill')->make());
         });
     }

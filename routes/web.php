@@ -25,4 +25,5 @@ Route::get('/location/{country}/{city}', 'CityController@show');
 
 
 Route::get('/{category}', 'CategoryController@show');
+Route::get('/{category}/{role}', 'RoleController@show');
 

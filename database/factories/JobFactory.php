@@ -10,8 +10,8 @@ $factory->define(App\Job::class, function (Faker $faker) {
         'company_id' => function () {
             return factory('App\Company')->create()->id;
         },
-        'category_id' => function () {
-            return mt_rand(1, 3);
+        'role_id' => function () {
+            return factory('App\Role')->create()->id;
         },
         'city_id' => function () {
             return factory('App\City')->create()->id;
