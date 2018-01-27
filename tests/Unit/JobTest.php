@@ -3,7 +3,6 @@
 namespace Tests\Unit;
 
 use Tests\TestCase;
-use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class JobTest extends TestCase
@@ -24,6 +23,14 @@ class JobTest extends TestCase
         $job = factory('App\Job')->create();
 
         $this->assertInstanceOf('Illuminate\Database\Eloquent\Collection', $job->skills);
+    }
+
+    /** @test */
+    public function it_belongs_to_a_city()
+    {
+        $job = factory('App\Job')->create();
+
+        $this->assertInstanceOf('App\City', $job->city);
     }
 
     /** @test */
