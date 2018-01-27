@@ -5,14 +5,13 @@ namespace App\Http\Controllers;
 use App\Job;
 use App\Company;
 use Illuminate\Http\Request;
-use App\Filters\SearchFilters;
 
 class JobController extends Controller
 {
     
-    public function index(SearchFilters $filters) 
+    public function index() 
     {
-        $jobs = $this->getJobs($filters);
+        $jobs = Job::latest()->paginate(25);
 
         return view('jobs.search', compact('jobs'));
     }
@@ -20,13 +19,6 @@ class JobController extends Controller
     public function show(Job $job) 
     {
         return view('jobs.show', compact('job'));
-    }
-
-    public function getJobs($filters) 
-    {
-        $jobs = Job::latest()->filter($filters);
-
-        return $jobs->paginate(25);
     }
 
 }

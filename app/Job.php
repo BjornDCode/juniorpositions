@@ -46,9 +46,4 @@ class Job extends Model
         return "https://www.facebook.com/sharer/sharer.php?u={$this->ownUrl()}";
     }
 
-    public function scopeFilter($query, SearchFilters $filters) 
-    {
-        return $filters->apply($query);
-    }
-
 }
