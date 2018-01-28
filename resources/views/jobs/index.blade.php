@@ -7,6 +7,7 @@
 @section('content')
     <div class="container">
         <h1>{{ $headline }}</h1>
+        @if (count($jobs))
         <ul class="jobs">
             @foreach($jobs as $job)
                 <li class="job">
@@ -35,5 +36,8 @@
 
             {{ $jobs->links() }}
         </ul>
+        @else
+            <p>Unfortunately there are no jobs in this category at the moment</p>
+        @endif
     </div>
 @endsection
