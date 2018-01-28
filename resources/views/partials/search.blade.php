@@ -39,8 +39,8 @@
                 </template>
             </ais-refinement-list>
         </div>
-        <button class="button search-button hide-mobile" @click="toggle">
+        {{-- <button class="button search-button hide-mobile" @click="toggle">
             <img src="/images/search.svg" alt="Search">
-        </button>
+        </button> --}}
     </div>
 </search-bar>

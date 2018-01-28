@@ -1,12 +1,12 @@
 <nav-bar inline-template>
     <aside class="nav-bar">
         <a href="/" class="logo">Logo</a>
-        <div class="flex align-center hide-desktop">
+        <div class="flex align-center">
             <button class="search-button" @click="toggleSearch">
                 <img src="/images/search.svg" alt="Search">
             </button>
             <button 
-                class="hamburger hamburger--spring" 
+                class="hamburger hamburger--spring hide-desktop" 
                 :class="{'is-active': sidebarOpen}"
                 type="button" 
                 @click.prevent="toggleSidebar">

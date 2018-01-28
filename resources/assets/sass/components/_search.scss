@@ -5,8 +5,12 @@
     border-bottom: 1px solid $grey-light;
     padding-top: 45px;
 
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 300ms;
+
     &.open {
-        
+        max-height: 900px;
     }
 
     .search-box {
@@ -83,6 +87,12 @@
             flex-wrap: wrap;
         }
 
+        .search-box {
+            margin: 0 auto;
+            max-width: 400px;
+            margin-bottom: 20px;
+        }
+
         .ais-refinement-list {
             width: 33.33%;
 
@@ -91,24 +101,24 @@
             }
         }
 
-        .search-button {
-            position: absolute;
-            height: 20px;
-            top: 100%;
-            right: 50px;
-            margin-bottom: 0px;
-            z-index: 100;
+        // .search-button {
+        //     position: absolute;
+        //     height: 20px;
+        //     top: 100%;
+        //     right: 50px;
+        //     margin-bottom: 0px;
+        //     z-index: 100;
 
-            img {
-                max-height: 50%;
-            }
-        }
+        //     img {
+        //         max-height: 50%;
+        //     }
+        // }
     }
 
     @include breakpoint(desktop) {
         padding-top: 30px;
 
-        .search-box, .facets {
+        .facets {
             margin: 0 auto;
         }
 
