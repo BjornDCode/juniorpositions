@@ -14,10 +14,7 @@
 
     <div id="app">
         @include('partials.navigation')
-        @yield('top')
-        <main class="content">
-            @yield('content')
-        </main>
+        @yield('content')
     </div>
 
     <script src="{{ asset('js/app.js') }}"></script>
