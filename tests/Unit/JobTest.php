@@ -34,6 +34,14 @@ class JobTest extends TestCase
     }
 
     /** @test */
+    public function it_belongs_to_a_role()
+    {
+        $job = factory('App\Job')->create();
+
+        $this->assertInstanceOf('App\Role', $job->role);
+    }
+
+    /** @test */
     public function it_knows_its_own_url()
     {
         $job = factory('App\Job')->create();

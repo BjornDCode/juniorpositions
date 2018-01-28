@@ -10,7 +10,7 @@ class Job extends Model
 {
     use Searchable;
 
-    protected $with = ['company', 'skills', 'city', 'city.country'];
+    protected $with = ['company', 'skills', 'city', 'city.country', 'role', 'role.category'];
 
     
     public function company() 
@@ -26,6 +26,11 @@ class Job extends Model
     public function city() 
     {
         return $this->belongsTo(City::class);
+    }
+
+    public function role() 
+    {
+        return $this->belongsTo(Role::class);
     }
 
     public function ownUrl() 
