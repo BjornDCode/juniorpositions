@@ -15,7 +15,7 @@ class RoleController extends Controller
 
         return view('jobs.index', [
             'jobs' => $jobs,
-            'headline' => "Jobs in {$category->title}"
+            'headline' => "Jobs in {$category->title} > {$role->name}"
         ]);
     }
 

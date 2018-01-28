@@ -645,7 +645,7 @@ h3 {
   max-height: 100%;
 }
 
-.nav-bar nav {
+.nav-bar ul {
   background-color: #242424;
   position: fixed;
   top: 45px;
@@ -660,12 +660,42 @@ h3 {
   transition: transform 200ms, -webkit-transform 200ms;
 }
 
-.nav-bar nav.open {
+.nav-bar ul.open {
   -webkit-transform: translateX(0);
           transform: translateX(0);
 }
 
-.nav-bar nav a {
+.nav-bar ul .sub-categories {
+  position: absolute;
+  right: auto;
+  left: 0;
+  top: 0;
+  height: 70px;
+  width: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+  z-index: -1;
+}
+
+.nav-bar ul .sub-categories.open {
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+}
+
+.nav-bar ul .sub-categories a {
+  width: 70px;
+}
+
+.nav-bar ul > li {
+  position: relative;
+}
+
+.nav-bar ul a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -680,22 +710,23 @@ h3 {
       -ms-flex-align: center;
           align-items: center;
   height: 70px;
+  background-color: #242424;
   -webkit-transition: background-color 200ms;
   transition: background-color 200ms;
 }
 
-.nav-bar nav a:hover,
-.nav-bar nav a.active {
+.nav-bar ul a:hover,
+.nav-bar ul a.active {
   background-color: #0b0a0a;
 }
 
-.nav-bar nav a img {
+.nav-bar ul a img {
   display: block;
   max-width: 32px;
   margin-bottom: 10px;
 }
 
-.nav-bar nav a span {
+.nav-bar ul a span {
   color: #F5DE3C;
   font-size: 10px;
   letter-spacing: 0.5px;
@@ -707,11 +738,11 @@ h3 {
           hyphens: auto;
 }
 
-.nav-bar nav a.search-icon img {
+.nav-bar ul a.search-icon img {
   max-width: 25px;
 }
 
-.nav-bar nav a.twitter {
+.nav-bar ul a.twitter {
   display: none;
 }
 
@@ -721,7 +752,7 @@ h3 {
     width: 70px;
   }
 
-  .nav-bar nav {
+  .nav-bar ul {
     -webkit-transform: translateX(0);
             transform: translateX(0);
     height: calc(100vh - 70px);
@@ -729,6 +760,18 @@ h3 {
     padding-top: 50px;
     right: auto;
     left: 0;
+  }
+
+  .nav-bar ul .sub-categories {
+    padding-top: 0;
+    left: 100%;
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+  }
+
+  .nav-bar ul .sub-categories.open {
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
   }
 }
 

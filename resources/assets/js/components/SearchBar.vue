@@ -7,10 +7,6 @@
             }
         },
 
-        mounted() {
-            if (window.innerWidth >= 768) this.toggle();
-        },
-
         created() {
             this.EventBus.$on('toggleSearch', this.toggle);
         },
