@@ -8,26 +8,17 @@ body {
 }
 
 .content {
-    padding-top: 45px;
+    padding-top: 50px;
     transition: transform 200ms;
 
     &.shifted {
         transform: translateX(-70px);
     }
 
-    &.pushed {
-        transform: translateY(285px);
-    }
-
     @include breakpoint(tablet) {
         padding-top: 20px;
     }
 
-    @include breakpoint(desktop) {
-        &.pushed {
-            transform: translateY(235px);
-        }
-    }
 }
 
 .container {

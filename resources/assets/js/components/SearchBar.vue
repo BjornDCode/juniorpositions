@@ -14,9 +14,8 @@
         methods: {
             toggle() {
                 this.open = !this.open;
-                var contentContainer = document.querySelector('.content');
-                contentContainer.classList.toggle('pushed');
-            }
+            },
+
         }
     }
 </script>

@@ -20158,13 +20158,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(85);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_instantsearch__ = __webpack_require__(159);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_NavBar__ = __webpack_require__(153);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_NavBar___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__components_NavBar__);
 
 
 
-
-// window.EventBus = new Vue();
 window.Vue = __webpack_require__(85);
 
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vue_instantsearch__["a" /* default */]);
@@ -34572,8 +34568,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     methods: {
         toggle: function toggle() {
             this.open = !this.open;
-            var contentContainer = document.querySelector('.content');
-            contentContainer.classList.toggle('pushed');
         }
     }
 });

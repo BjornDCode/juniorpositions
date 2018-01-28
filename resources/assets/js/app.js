@@ -1,8 +1,6 @@
 import Vue from 'vue';
 import InstantSearch from 'vue-instantsearch';
-import NavBar from './components/NavBar';
 
-// window.EventBus = new Vue();
 window.Vue = require('vue');
 
 Vue.use(InstantSearch);
