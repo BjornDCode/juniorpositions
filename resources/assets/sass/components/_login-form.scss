@@ -1,0 +1,41 @@
+.login-form {
+    padding: 65px 15px 15px 15px;
+    background-color: $white;
+
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    label {
+        font-size: 12px;
+        font-weight: 500;
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    input {
+        display: block;
+        width: 100%;
+        padding: 10px 15px;
+        box-sizing: border-box;
+        border: 2px solid $grey-light;
+    }
+
+    .checkbox label {
+        display: flex;
+        align-items: center;
+
+        input {
+            width: auto;
+        }
+    }
+
+    @include breakpoint(tablet) {
+        max-width: 500px;
+        margin: 0 auto;
+        transform: translateY(100px);
+        padding: 20px;
+    }
+
+}

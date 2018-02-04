@@ -657,11 +657,28 @@ h4 {
   transition: -webkit-transform 200ms;
   transition: transform 200ms;
   transition: transform 200ms, -webkit-transform 200ms;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.nav-bar ul > div {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
 }
 
 .nav-bar ul.open {
   -webkit-transform: translateX(0);
           transform: translateX(0);
+}
+
+.nav-bar ul div > li {
+  position: relative;
 }
 
 .nav-bar ul .sub-categories {
@@ -688,10 +705,6 @@ h4 {
 
 .nav-bar ul .sub-categories a {
   width: 70px;
-}
-
-.nav-bar ul > li {
-  position: relative;
 }
 
 .nav-bar ul a {
@@ -741,10 +754,6 @@ h4 {
   max-width: 25px;
 }
 
-.nav-bar ul a.twitter {
-  display: none;
-}
-
 @media (min-width: 768px) {
   .nav-bar {
     height: 70px;
@@ -771,7 +780,6 @@ h4 {
             transform: translateX(0);
     height: calc(100vh - 70px);
     top: 70px;
-    padding-top: 50px;
     right: auto;
     left: 0;
   }
@@ -940,6 +948,54 @@ h4 {
 
   .search .ais-refinement-list__value {
     font-size: 12px;
+  }
+}
+
+.login-form {
+  padding: 65px 15px 15px 15px;
+  background-color: #fff;
+}
+
+.login-form .form-group {
+  margin-bottom: 20px;
+}
+
+.login-form label {
+  font-size: 12px;
+  font-weight: 500;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.login-form input {
+  display: block;
+  width: 100%;
+  padding: 10px 15px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: 2px solid #DCDCDE;
+}
+
+.login-form .checkbox label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.login-form .checkbox label input {
+  width: auto;
+}
+
+@media (min-width: 768px) {
+  .login-form {
+    max-width: 500px;
+    margin: 0 auto;
+    -webkit-transform: translateY(100px);
+            transform: translateY(100px);
+    padding: 20px;
   }
 }
 

@@ -13,6 +13,22 @@
 
 Route::get('/', 'JobController@index');
 
+// Authentication Routes...
+Route::get('/admin/login', [
+  'as' => 'login',
+  'uses' => 'Auth\LoginController@showLoginForm'
+]);
+Route::post('/admin/login', [
+  'as' => '',
+  'uses' => 'Auth\LoginController@login'
+]);
+Route::post('/admin/logout', [
+  'as' => 'logout',
+  'uses' => 'Auth\LoginController@logout'
+]);
+
+Route::get('/admin', 'AdminController@index');
+
 Route::get('/jobs', 'JobController@index');
 Route::get('/jobs/{job}', 'JobController@show');
 

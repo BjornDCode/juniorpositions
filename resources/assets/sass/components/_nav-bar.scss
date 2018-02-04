@@ -34,8 +34,19 @@
         transform: translateX(100%);
         transition: transform 200ms;
 
+        display: flex;
+        flex-direction: column;
+
+        > div {
+            flex: 1;
+        }
+
         &.open {
             transform: translateX(0);
+        }
+
+        div > li {
+            position: relative;
         }
 
         .sub-categories {
@@ -58,10 +69,6 @@
                 width: 70px;
             }
 
-        }
-
-        > li {
-            position: relative;
         }
 
         a {
@@ -101,9 +108,6 @@
                 }
             }
 
-            &.twitter {
-                display: none;
-            }
         }
 
     }
@@ -132,7 +136,6 @@
             transform: translateX(0);
             height: calc(100vh - 70px);
             top: 70px;
-            padding-top: 50px;
             right: auto;
             left: 0;
 

@@ -16,6 +16,7 @@
             </button>
         </div>
         <ul :class="{ open: sidebarOpen }">
+            <div>
             <li>
                 <a href="/jobs" class="search-icon {{ Request::is('jobs') ? 'active' : '' }}">
                     <img src="/images/search.svg" alt="Search">
@@ -52,6 +53,26 @@
                     @endif
                 </li>
             @endforeach
+            </div>
+            @if (auth()->check())
+                <li>
+                    <a href="/admin">
+                        <img src="/images/admin.svg"/>
+                        <span>Admin</span>
+                    </a>
+                </li> 
+                <li>
+                    <a href="/admin/logout" onclick="event.preventDefault();
+                                            document.getElementById('logout-form').submit();">
+                        <img src="/images/logout.svg"/>
+                        <span>Logout</span>
+                    </a>
+
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        {{ csrf_field() }}
+                    </form>
+                </li>
+            @endif
             <li>                
                 <a href="https://twitter.com/LindholmHansen" class="twitter">
                     <img src="/images/twitter.svg" alt="Twitter">
