@@ -2,7 +2,7 @@
 
 namespace App;
 
-// use GuzzleHttp\Client as Guzzle;
+use App\UnlistedJob;
 use JobApis\Jobs\Client\JobsMulti;
 
 class JobProvider 
@@ -35,33 +35,14 @@ class JobProvider
     {
         $lowerCaseJobTitle = strtolower($job->title);
         if (strpos($lowerCaseJobTitle, 'junior') !== false || strpos($lowerCaseJobTitle, 'entry') !== false) {
-            echo $job->title . PHP_EOL;
+            UnlistedJob::create([
+                'title' => $job->name,
+                'description' => $job->description,
+                'url' => $job->url,
+                'location' => $job->location,
+                'company' => $job->company
+            ]);
         }
     }
-    
-    // public function getJobs() 
-    // {
-    //     $client = new Guzzle;
-
-    //     // $result = $client->request('GET', 'https://community-angellist.p.mashape.com/jobs', [
-    //     //     'headers' => [
-    //     //         "X-Mashape-Key" => "TE7qz8RTTbmshTnTX0NMEf2bIhA2p1exLtEjsnKJe2FLh6A8Go",
-    //     //         "Accept" => "application/json"
-    //     //     ]
-    //     // ]);
-
-    //     $results = $client->request('GET', 'https://jobs.github.com/positions.json?description=junior');
-
-    //     $results = json_decode($results->getBody());
-
-    //     foreach ($results as $result) {
-    //         $this->parseJob($result);
-    //     }
-    // }
-
-    // public function parseJob($job) 
-    // {
-    //     echo $job->title;
-    // }
 
 }
