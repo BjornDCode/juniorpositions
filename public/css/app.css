@@ -434,16 +434,6 @@ h4 {
   margin-bottom: 5px;
 }
 
-.job {
-  background-color: #fff;
-  border: 1px solid #DCDCDE;
-  border-radius: 4px;
-  padding: 15px;
-  margin-bottom: 10px;
-  -webkit-box-shadow: 0 1px 3px 0 #DCDCDE;
-          box-shadow: 0 1px 3px 0 #DCDCDE;
-}
-
 .job > a {
   display: block;
 }
@@ -997,5 +987,50 @@ h4 {
             transform: translateY(100px);
     padding: 20px;
   }
+}
+
+.admin {
+  max-width: 800px;
+  margin: 0 auto;
+  -webkit-transform: translateY(30px);
+          transform: translateY(30px);
+}
+
+.admin .card {
+  background-color: #fff;
+  border: 1px solid #DCDCDE;
+  border-radius: 4px;
+  padding: 15px;
+  margin-bottom: 10px;
+  -webkit-box-shadow: 0 1px 3px 0 #DCDCDE;
+          box-shadow: 0 1px 3px 0 #DCDCDE;
+}
+
+.admin .tabs-component-tabs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.admin .tabs-component-tab {
+  border-bottom: 2px solid #F5DE3C;
+  padding: 5px 10px;
+  margin-right: 10px;
+}
+
+.admin .tabs-component-tab a {
+  color: #a4a3a3;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.admin .tabs-component-tab.is-active a {
+  color: #242424;
+}
+
+.admin .tabs-component-panel {
+  padding: 10px;
+  padding-top: 30px;
 }
 

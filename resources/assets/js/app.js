@@ -1,9 +1,12 @@
 import Vue from 'vue';
 import InstantSearch from 'vue-instantsearch';
+import Tabs from 'vue-tabs-component';
+
 
 window.Vue = require('vue');
 
 Vue.use(InstantSearch);
+Vue.use(Tabs);
 
 Vue.prototype.EventBus = new Vue({});
 

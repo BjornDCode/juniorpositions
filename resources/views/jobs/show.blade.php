@@ -11,7 +11,7 @@
 
 @section('content')
     <div class="container">
-        <div class="job single-job">
+        <div class="job single-job card">
             <h3>{{ $job->title }}</h3>
             <div>
                 <p>{{ $job->description }}</p>

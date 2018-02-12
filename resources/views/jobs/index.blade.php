@@ -11,7 +11,7 @@
             @if (count($jobs))
             <ul class="jobs">
                 @foreach($jobs as $job)
-                    <li class="job">
+                    <li class="job card">
                         <a href="/jobs/{{ $job->id }}">
                             <h3>{{ $job->title }}</h3>
                         </a>

@@ -19,7 +19,7 @@
                 <ul class="jobs">
                     <ais-results>
                         <template slot-scope="{ result }">
-                            <li class="job">
+                            <li class="job card">
                                 <a :href="'/jobs/' + result.id">
                                     <h3 v-text="result.title"></h3>
                                 </a>
