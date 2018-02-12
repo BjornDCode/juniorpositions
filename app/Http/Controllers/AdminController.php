@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Job;
+use App\City;
 use App\jobs;
 use App\Skill;
 use App\Company;
@@ -23,6 +24,7 @@ class AdminController extends Controller
     {
         $skills = Skill::latest()->get();
         $countries = Country::orderBy('name')->get();
+        $cities = City::all();
         $companies = Company::orderBy('name')->get();
         $categories = Category::orderBy('title')->get();
         $unlistedJobs = UnlistedJob::latest()->get();
@@ -34,7 +36,8 @@ class AdminController extends Controller
             'companies' => $companies,
             'categories' => $categories,
             'unlistedJobs' => $unlistedJobs,
-            'jobs' => $jobs
+            'jobs' => $jobs,
+            'cities' => $cities
         ]);
     }
 

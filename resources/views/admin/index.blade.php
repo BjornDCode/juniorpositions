@@ -14,6 +14,22 @@
                     {{ count($jobs) }}
                     <span>Active Jobs</span>
                 </div>
+                <div class="stat">
+                    {{ count($skills) }}
+                    <span>Skills</span>
+                </div>
+                <div class="stat">
+                    {{ count($countries) }}
+                    <span>Countries</span>
+                </div>
+                <div class="stat">
+                    {{ count($cities) }}
+                    <span>Cities</span>
+                </div>
+                <div class="stat">
+                    {{ count($companies) }}
+                    <span>Companies</span>
+                </div>
             </div>
             <tabs class="card">
                 <tab name="Unlisted Jobs">
