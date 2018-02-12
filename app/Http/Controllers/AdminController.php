@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Skill;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -14,7 +15,11 @@ class AdminController extends Controller
     
     public function index() 
     {
-        return view('admin.index');
+        $skills = Skill::latest()->get();
+
+        return view('admin.index', [
+            'skills' => $skills
+        ]);
     }
 
 }

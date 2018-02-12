@@ -18,4 +18,16 @@ class SkillController extends Controller
         ]);
     }
 
+    public function store(Request $request) 
+    {
+        $data = $request->validate([
+            'name' => 'required|unique:skills',
+            'slug' => 'required|unique:skills'
+        ]);
+
+        $skill = Skill::create($data);
+
+        return back();
+    }
+
 }
