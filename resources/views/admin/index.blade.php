@@ -6,7 +6,14 @@
         <div class="admin">
             <h1>Admin</h1>
             <div class="stats card">
-                <h2>Stats</h2>
+                <div class="stat">
+                    {{ count($unlistedJobs) }}
+                    <span>Unlisted Jobs</span>
+                </div>
+                <div class="stat">
+                    {{ count($jobs) }}
+                    <span>Active Jobs</span>
+                </div>
             </div>
             <tabs class="card">
                 <tab name="Unlisted Jobs">

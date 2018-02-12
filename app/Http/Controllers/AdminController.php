@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Job;
+use App\jobs;
 use App\Skill;
 use App\Company;
 use App\Country;
 use App\Category;
+use App\UnlistedJob;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -22,12 +25,16 @@ class AdminController extends Controller
         $countries = Country::orderBy('name')->get();
         $companies = Company::orderBy('name')->get();
         $categories = Category::orderBy('title')->get();
+        $unlistedJobs = UnlistedJob::latest()->get();
+        $jobs = Job::latest()->get();
 
         return view('admin.index', [
             'skills' => $skills,
             'countries' => $countries,
             'companies' => $companies,
-            'categories' => $categories
+            'categories' => $categories,
+            'unlistedJobs' => $unlistedJobs,
+            'jobs' => $jobs
         ]);
     }
 

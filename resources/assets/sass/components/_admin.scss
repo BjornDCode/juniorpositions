@@ -13,6 +13,23 @@
         box-shadow: 0 1px 3px 0 $grey-light;
     }
 
+    .stats {
+        display: flex;
+
+        .stat {
+            text-align: center;
+            font-size: 30px;
+            font-weight: 600;
+            margin-right: 30px;
+
+            span {
+                display: block;
+                font-size: 10px;
+                font-weight: 400;
+            }
+        }
+    }
+
     .tabs-component {
         &-tabs {
             display: flex;

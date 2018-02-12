@@ -1006,6 +1006,25 @@ h4 {
           box-shadow: 0 1px 3px 0 #DCDCDE;
 }
 
+.admin .stats {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.admin .stats .stat {
+  text-align: center;
+  font-size: 30px;
+  font-weight: 600;
+  margin-right: 30px;
+}
+
+.admin .stats .stat span {
+  display: block;
+  font-size: 10px;
+  font-weight: 400;
+}
+
 .admin .tabs-component-tabs {
   display: -webkit-box;
   display: -ms-flexbox;
