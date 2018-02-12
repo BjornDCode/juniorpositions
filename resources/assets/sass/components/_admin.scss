@@ -44,22 +44,37 @@
 
     }
 
+    h2 {
+        font-weight: 500;
+        margin-bottom: 10px;
+    }
+
     form {
         display: flex;
+        margin-bottom: 30px;
 
         .group {
             flex: 1;
             margin-right: 10px;
         }
 
-        input[type=text] {
+        input[type=text], select {
             display: block;
             height: 40px;
             width: 100%;
             padding: 0 10px;
             box-sizing: border-box;
+            border: 1px solid $grey-light;
             font-size: 13px;
         }
+
+        select {
+            background-color: $white;
+            -webkit-appearance: none;
+            cursor: pointer;
+            border-radius: 0px;
+        }
+
     }
 
     .errors {
@@ -69,7 +84,7 @@
     }
 
     .list {
-        margin-top: 30px;
+        margin-bottom: 20px;
         ul {
             display: flex;
             flex-wrap: wrap;
@@ -81,6 +96,15 @@
             margin-right: 10px;
             margin-bottom: 10px;
             font-size: 12px;
+        }
+    }
+
+    .countries {
+        display: flex;
+        flex-wrap: wrap;
+
+        .country {
+            width: 50%;
         }
     }
 

@@ -21,4 +21,16 @@ class CountryController extends Controller
         ]);
     }
 
+    public function store(Request $request) 
+    {
+        $data = $request->validate([
+            'name' => 'required|unique:countries',
+            'slug' => 'required|unique:countries'
+        ]);
+
+        $country = Country::create($data);
+
+        return back();
+    }
+
 }

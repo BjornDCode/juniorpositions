@@ -19,4 +19,17 @@ class CityController extends Controller
         ]);
     }
 
+    public function store(Request $request) 
+    {
+        $data = $request->validate([
+            'name' => 'required|unique:countries',
+            'slug' => 'required|unique:countries',
+            'country_id' => 'required|exists:countries,id'
+        ]);
+
+        $city = City::create($data);
+
+        return back();
+    }
+
 }

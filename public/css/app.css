@@ -1034,10 +1034,16 @@ h4 {
   padding-top: 30px;
 }
 
+.admin h2 {
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
 .admin form {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  margin-bottom: 30px;
 }
 
 .admin form .group {
@@ -1047,14 +1053,23 @@ h4 {
   margin-right: 10px;
 }
 
-.admin form input[type=text] {
+.admin form input[type=text],
+.admin form select {
   display: block;
   height: 40px;
   width: 100%;
   padding: 0 10px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  border: 1px solid #DCDCDE;
   font-size: 13px;
+}
+
+.admin form select {
+  background-color: #fff;
+  -webkit-appearance: none;
+  cursor: pointer;
+  border-radius: 0px;
 }
 
 .admin .errors {
@@ -1064,7 +1079,7 @@ h4 {
 }
 
 .admin .list {
-  margin-top: 30px;
+  margin-bottom: 20px;
 }
 
 .admin .list ul {
@@ -1081,5 +1096,17 @@ h4 {
   margin-right: 10px;
   margin-bottom: 10px;
   font-size: 12px;
+}
+
+.admin .countries {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.admin .countries .country {
+  width: 50%;
 }
 

@@ -38,7 +38,9 @@ Route::get('/skill/{skill}', 'SkillController@show');
 Route::post('/skill', 'SkillController@store');
 
 Route::get('/location/{country}', 'CountryController@show');
+Route::post('/location/country', 'CountryController@store');
 Route::get('/location/{country}/{city}', 'CityController@show');
+Route::post('/location/country/city', 'CityController@store');
 
 
 Route::get('/{category}', 'CategoryController@show');
