@@ -33,6 +33,7 @@ Route::get('/jobs', 'JobController@index');
 Route::get('/jobs/{job}', 'JobController@show');
 
 Route::get('/company/{company}', 'CompanyController@show');
+Route::post('/company', 'CompanyController@store');
 
 Route::get('/skill/{skill}', 'SkillController@show');
 Route::post('/skill', 'SkillController@store');

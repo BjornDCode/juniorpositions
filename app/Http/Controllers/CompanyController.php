@@ -18,4 +18,16 @@ class CompanyController extends Controller
         ]);
     }
 
+    public function store(Request $request) 
+    {
+        $data = $request->validate([
+            'name' => 'required|unique:companies',
+            'slug' => 'required|unique:companies',
+        ]);
+
+        $city = Company::create($data);
+
+        return back();
+    }
+
 }

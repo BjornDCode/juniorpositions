@@ -18,6 +18,9 @@
                 <tab name="Locations">
                     @include('admin.locations')
                 </tab> 
+                <tab name="Companies">
+                    @include('admin.companies')
+                </tab>
             </tabs>
         </div>
     </main>
