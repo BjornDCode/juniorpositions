@@ -45,5 +45,7 @@ Route::post('/location/country/city', 'CityController@store');
 
 
 Route::get('/{category}', 'CategoryController@show');
+Route::post('/category', 'CategoryController@store');
 Route::get('/{category}/{role}', 'RoleController@show');
+Route::post('/category/role', 'RoleController@store');
 

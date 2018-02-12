@@ -22,8 +22,8 @@ class CityController extends Controller
     public function store(Request $request) 
     {
         $data = $request->validate([
-            'name' => 'required|unique:countries',
-            'slug' => 'required|unique:countries',
+            'name' => 'required|unique:cities',
+            'slug' => 'required|unique:cities',
             'country_id' => 'required|exists:countries,id'
         ]);
 

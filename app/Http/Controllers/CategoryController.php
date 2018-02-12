@@ -18,4 +18,16 @@ class CategoryController extends Controller
         ]);
     }
 
+    public function store(Request $request) 
+    {
+        $data = $request->validate([
+            'title' => 'required|unique:categories',
+            'slug' => 'required|unique:categories',
+        ]);
+
+        $category = Category::create($data);
+
+        return back();
+    }
+
 }

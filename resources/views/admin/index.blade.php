@@ -21,6 +21,9 @@
                 <tab name="Companies">
                     @include('admin.companies')
                 </tab>
+                <tab name="Categories">
+                    @include('admin.categories')
+                </tab>
             </tabs>
         </div>
     </main>

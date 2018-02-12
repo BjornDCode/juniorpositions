@@ -19,4 +19,17 @@ class RoleController extends Controller
         ]);
     }
 
+    public function store(Request $request) 
+    {
+        $data = $request->validate([
+            'name' => 'required|unique:roles',
+            'slug' => 'required|unique:roles',
+            'category_id' => 'required|exists:categories,id'
+        ]);
+
+        $role = Role::create($data);
+
+        return back();
+    }
+
 }

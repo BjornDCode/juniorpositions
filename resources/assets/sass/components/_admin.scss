@@ -99,11 +99,11 @@
         }
     }
 
-    .countries {
+    .countries, .categories {
         display: flex;
         flex-wrap: wrap;
 
-        .country {
+        .country, .category {
             width: 50%;
         }
     }
