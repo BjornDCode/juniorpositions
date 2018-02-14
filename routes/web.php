@@ -27,6 +27,8 @@ Route::post('/admin/logout', [
   'uses' => 'Auth\LoginController@logout'
 ]);
 
+Route::delete('/unlisted/{unlistedJob}', 'UnlistedJobController@destroy');
+
 Route::get('/admin', 'AdminController@index');
 
 Route::get('/jobs', 'JobController@index');

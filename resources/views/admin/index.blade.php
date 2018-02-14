@@ -1,5 +1,8 @@
 @extends('layouts.app')
 
+@section('header')
+    <title>Admin</title>
+@endsection
 
 @section('content')
     <main>
@@ -33,7 +36,7 @@
             </div>
             <tabs class="card">
                 <tab name="Unlisted Jobs">
-                    List of Jobs
+                    @include('admin.unlisted')
                 </tab>
                 <tab name="Skills">
                     @include('admin.skills')

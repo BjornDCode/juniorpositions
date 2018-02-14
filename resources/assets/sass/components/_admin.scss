@@ -66,16 +66,46 @@
         margin-bottom: 10px;
     }
 
+    .unlisted-job {
+        .attributes {
+            > div {
+                font-size: 14px;
+                margin-bottom: 15px;
+
+                span {
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+
     form {
         display: flex;
         margin-bottom: 30px;
+
+        &.unlisted {
+            display: block;
+
+            input, textarea, select {
+                margin-bottom: 20px;
+            }
+
+        }
+
+        .flex {
+            display: flex;
+        }
 
         .group {
             flex: 1;
             margin-right: 10px;
         }
 
-        input[type=text], select {
+        .multiple {
+            height: 200px;
+        }
+
+        input[type=text], select, textarea {
             display: block;
             height: 40px;
             width: 100%;
@@ -83,6 +113,10 @@
             box-sizing: border-box;
             border: 1px solid $grey-light;
             font-size: 13px;
+        }
+
+        textarea {
+            height: 300px;
         }
 
         select {

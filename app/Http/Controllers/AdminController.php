@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Job;
 use App\City;
+use App\Role;
 use App\jobs;
 use App\Skill;
 use App\Company;
@@ -22,7 +23,7 @@ class AdminController extends Controller
     
     public function index() 
     {
-        $skills = Skill::latest()->get();
+        $skills = Skill::orderBy('name')->get();
         $countries = Country::orderBy('name')->get();
         $cities = City::all();
         $companies = Company::orderBy('name')->get();

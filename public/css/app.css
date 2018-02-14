@@ -1060,11 +1060,36 @@ h4 {
   margin-bottom: 10px;
 }
 
+.admin .unlisted-job .attributes > div {
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+.admin .unlisted-job .attributes > div span {
+  font-weight: bold;
+}
+
 .admin form {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   margin-bottom: 30px;
+}
+
+.admin form.unlisted {
+  display: block;
+}
+
+.admin form.unlisted input,
+.admin form.unlisted textarea,
+.admin form.unlisted select {
+  margin-bottom: 20px;
+}
+
+.admin form .flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .admin form .group {
@@ -1074,8 +1099,13 @@ h4 {
   margin-right: 10px;
 }
 
+.admin form .multiple {
+  height: 200px;
+}
+
 .admin form input[type=text],
-.admin form select {
+.admin form select,
+.admin form textarea {
   display: block;
   height: 40px;
   width: 100%;
@@ -1084,6 +1114,10 @@ h4 {
           box-sizing: border-box;
   border: 1px solid #DCDCDE;
   font-size: 13px;
+}
+
+.admin form textarea {
+  height: 300px;
 }
 
 .admin form select {
