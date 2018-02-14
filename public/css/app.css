@@ -308,6 +308,16 @@ body.no-scroll {
   }
 }
 
+.card {
+  background-color: #fff;
+  border: 1px solid #DCDCDE;
+  border-radius: 4px;
+  padding: 15px;
+  margin-bottom: 10px;
+  -webkit-box-shadow: 0 1px 3px 0 #DCDCDE;
+          box-shadow: 0 1px 3px 0 #DCDCDE;
+}
+
 .flex {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -994,16 +1004,6 @@ h4 {
   margin: 0 auto;
   -webkit-transform: translateY(30px);
           transform: translateY(30px);
-}
-
-.admin .card {
-  background-color: #fff;
-  border: 1px solid #DCDCDE;
-  border-radius: 4px;
-  padding: 15px;
-  margin-bottom: 10px;
-  -webkit-box-shadow: 0 1px 3px 0 #DCDCDE;
-          box-shadow: 0 1px 3px 0 #DCDCDE;
 }
 
 .admin .stats {

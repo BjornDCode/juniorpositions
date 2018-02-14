@@ -12,6 +12,8 @@ class Job extends Model
 
     protected $with = ['company', 'skills', 'city', 'city.country', 'role', 'role.category'];
 
+    protected $guarded = [];
+
     
     public function company() 
     {

@@ -33,6 +33,7 @@ Route::get('/admin', 'AdminController@index');
 
 Route::get('/jobs', 'JobController@index');
 Route::get('/jobs/{job}', 'JobController@show');
+Route::post('/jobs', 'JobController@store');
 
 Route::get('/company/{company}', 'CompanyController@show');
 Route::post('/company', 'CompanyController@store');

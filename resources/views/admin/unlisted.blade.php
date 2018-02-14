@@ -4,6 +4,10 @@
 
 <form action="/jobs" method="post" class="unlisted">
     {{ csrf_field() }}
+
+    <input type="hidden" name="unlistedJob" value="{{$job->id}}">
+
+    {{-- Hidden field for unlistedJob id --}}
     <div class="group">
         <input type="text" name="title" placeholder="Title" value="{{ $job->title }}">
     </div>
@@ -51,7 +55,7 @@
             </select>
         </div>
         <div class="group">
-            <select name="skills" multiple class="multiple">
+            <select name="skills[]" multiple class="multiple">
                 <option value="">Skills</option>
                 @foreach($skills as $skill)
                     <option value="{{ $skill->id }}">
@@ -82,9 +86,6 @@
     <h2>{{ $job->title }}</h2>
     <div>
         <p>
-            {{-- {{ strip_tags($job->description) }} --}}
-            {{-- {{ $job->description }} --}}
-            {{-- {{ htmlspecialchars_decode($job->description) }} --}}
             @php 
                 echo strip_tags($job->description, '<br><hr><p><ul><ol><dl><li><dd><dt><span><h1><h2><3><h4><h5><h6>');
             @endphp
