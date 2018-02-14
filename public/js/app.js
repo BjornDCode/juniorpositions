@@ -20099,7 +20099,7 @@ module.exports = function normalizeComponent (
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(155);
-module.exports = __webpack_require__(344);
+module.exports = __webpack_require__(345);
 
 
 /***/ }),
@@ -20111,7 +20111,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(85);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_instantsearch__ = __webpack_require__(158);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vue_tabs_component__ = __webpack_require__(349);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vue_tabs_component__ = __webpack_require__(340);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vue_tabs_component___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_vue_tabs_component__);
 
 
@@ -20130,8 +20130,8 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.prototype.EventBus = new __WEBPACK_I
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-__WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('nav-bar', __webpack_require__(340));
-__WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('search-bar', __webpack_require__(342));
+__WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('nav-bar', __webpack_require__(341));
+__WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('search-bar', __webpack_require__(343));
 
 var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
     el: '#app',
@@ -34417,179 +34417,6 @@ function escapeHtml(string) {
 /* 340 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var disposed = false
-var normalizeComponent = __webpack_require__(153)
-/* script */
-var __vue_script__ = __webpack_require__(341)
-/* template */
-var __vue_template__ = null
-/* template functional */
-var __vue_template_functional__ = false
-/* styles */
-var __vue_styles__ = null
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_template_functional__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "resources/assets/js/components/NavBar.vue"
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-046a7e32", Component.options)
-  } else {
-    hotAPI.reload("data-v-046a7e32", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-/* 341 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-    data: function data() {
-        return {
-            sidebarOpen: false,
-            openedCategory: 0,
-            body: document.querySelector('body')
-        };
-    },
-
-
-    methods: {
-        toggleSidebar: function toggleSidebar(e) {
-            this.sidebarOpen = !this.sidebarOpen;
-            this.openedCategory = 0;
-            this.body.classList.toggle('no-scroll');
-            var contentContainer = document.querySelector('.content');
-            contentContainer.classList.toggle('shifted');
-        },
-        toggleSearch: function toggleSearch() {
-            if (this.sidebarOpen) return;
-            this.EventBus.$emit('toggleSearch');
-        },
-        toggleSubCategoriesTouch: function toggleSubCategoriesTouch(e) {
-            e.preventDefault();
-            var categoryId = e.currentTarget.dataset.categoryId;
-            this.openedCategory = this.openedCategory == categoryId ? 0 : categoryId;
-        },
-        openSubCategoriesDesktop: function openSubCategoriesDesktop(e) {
-            var categoryId = e.currentTarget.dataset.categoryId;
-            this.openedCategory = categoryId;
-        },
-        closeSubCategoriesDesktop: function closeSubCategoriesDesktop(e) {
-            this.openedCategory = 0;
-        }
-    }
-});
-
-/***/ }),
-/* 342 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-var normalizeComponent = __webpack_require__(153)
-/* script */
-var __vue_script__ = __webpack_require__(343)
-/* template */
-var __vue_template__ = null
-/* template functional */
-var __vue_template_functional__ = false
-/* styles */
-var __vue_styles__ = null
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_template_functional__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "resources/assets/js/components/SearchBar.vue"
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-f8be00b8", Component.options)
-  } else {
-    hotAPI.reload("data-v-f8be00b8", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-/* 343 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-    data: function data() {
-        return {
-            open: true
-        };
-    },
-    created: function created() {
-        this.EventBus.$on('toggleSearch', this.toggle);
-    },
-
-
-    methods: {
-        toggle: function toggle() {
-            this.open = !this.open;
-        }
-    }
-});
-
-/***/ }),
-/* 344 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 345 */,
-/* 346 */,
-/* 347 */,
-/* 348 */,
-/* 349 */
-/***/ (function(module, exports, __webpack_require__) {
-
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(true)
 		module.exports = factory();
@@ -35519,6 +35346,175 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 /***/ })
 /******/ ]);
 });
+
+/***/ }),
+/* 341 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(153)
+/* script */
+var __vue_script__ = __webpack_require__(342)
+/* template */
+var __vue_template__ = null
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/NavBar.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-046a7e32", Component.options)
+  } else {
+    hotAPI.reload("data-v-046a7e32", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 342 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    data: function data() {
+        return {
+            sidebarOpen: false,
+            openedCategory: 0,
+            body: document.querySelector('body')
+        };
+    },
+
+
+    methods: {
+        toggleSidebar: function toggleSidebar(e) {
+            this.sidebarOpen = !this.sidebarOpen;
+            this.openedCategory = 0;
+            this.body.classList.toggle('no-scroll');
+            var contentContainer = document.querySelector('.content');
+            contentContainer.classList.toggle('shifted');
+        },
+        toggleSearch: function toggleSearch() {
+            if (this.sidebarOpen) return;
+            this.EventBus.$emit('toggleSearch');
+        },
+        toggleSubCategoriesTouch: function toggleSubCategoriesTouch(e) {
+            e.preventDefault();
+            var categoryId = e.currentTarget.dataset.categoryId;
+            this.openedCategory = this.openedCategory == categoryId ? 0 : categoryId;
+        },
+        openSubCategoriesDesktop: function openSubCategoriesDesktop(e) {
+            var categoryId = e.currentTarget.dataset.categoryId;
+            this.openedCategory = categoryId;
+        },
+        closeSubCategoriesDesktop: function closeSubCategoriesDesktop(e) {
+            this.openedCategory = 0;
+        }
+    }
+});
+
+/***/ }),
+/* 343 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(153)
+/* script */
+var __vue_script__ = __webpack_require__(344)
+/* template */
+var __vue_template__ = null
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/SearchBar.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-f8be00b8", Component.options)
+  } else {
+    hotAPI.reload("data-v-f8be00b8", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 344 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    data: function data() {
+        return {
+            open: true
+        };
+    },
+    created: function created() {
+        this.EventBus.$on('toggleSearch', this.toggle);
+    },
+
+
+    methods: {
+        toggle: function toggle() {
+            this.open = !this.open;
+        }
+    }
+});
+
+/***/ }),
+/* 345 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
 
 /***/ })
 /******/ ]);

@@ -1010,13 +1010,15 @@ h4 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .admin .stats .stat {
   text-align: center;
   font-size: 30px;
   font-weight: 600;
-  margin-right: 30px;
 }
 
 .admin .stats .stat span {

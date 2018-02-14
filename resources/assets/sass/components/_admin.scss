@@ -15,12 +15,12 @@
 
     .stats {
         display: flex;
+        justify-content: space-between;
 
         .stat {
             text-align: center;
             font-size: 30px;
             font-weight: 600;
-            margin-right: 30px;
 
             span {
                 display: block;
