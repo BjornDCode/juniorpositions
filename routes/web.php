@@ -29,6 +29,7 @@ Route::post('/admin/logout', [
 
 Route::delete('/unlisted/{unlistedJob}', 'UnlistedJobController@destroy');
 
+Route::get('/admin/clear-cache', 'AdminController@clearCache');
 Route::get('/admin', 'AdminController@index');
 
 Route::get('/jobs', 'JobController@index');

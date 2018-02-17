@@ -7,7 +7,12 @@
 @section('content')
     <main>
         <div class="admin">
-            <h1>Admin</h1>
+            <div class="flex space-between">
+                <h1>Admin</h1>
+                <div class="flex">
+                <a href="/admin/clear-cache" class="button">Clear Cache</a>
+                </div>
+            </div>
             <div class="stats card">
                 <div class="stat">
                     {{ count($unlistedJobs) }}

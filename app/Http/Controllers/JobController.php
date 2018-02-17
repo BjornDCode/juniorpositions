@@ -30,8 +30,6 @@ class JobController extends Controller
 
     public function store(Request $request) 
     {
-
-
         $job = $request->validate([
             'title' => 'required',
             'description' => 'required',
@@ -41,8 +39,9 @@ class JobController extends Controller
             'city_id' => 'required|exists:cities,id'
         ]);
 
-        $job = Job::create($job);
+        $job = new Job($job);
 
+        $job->save();
 
         $skills = $request->validate([
             'skills' => 'required',
@@ -50,12 +49,10 @@ class JobController extends Controller
         ]);
 
         foreach ($skills['skills'] as $skill) {
-            DB::table('job_skill')->insert([
-                'job_id' => $job->id,
-                'skill_id' => $skill
-            ]);
+            $job->skills()->attach($skill);  
         }
 
+        Job::all()->searchable();
     
         $unlistedJob = $request->validate([
             'unlistedJob' => 'required|exists:unlisted_jobs,id'

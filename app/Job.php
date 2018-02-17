@@ -53,4 +53,17 @@ class Job extends Model
         return "https://www.facebook.com/sharer/sharer.php?u={$this->ownUrl()}";
     }
 
+    public function toSearchableArray() 
+    {
+
+        $this->company;
+        $this->skills;
+        $this->city;
+        $this->city->country;
+        $this->role;
+        $this->role->category;
+
+        return $this->toArray();
+    }
+
 }

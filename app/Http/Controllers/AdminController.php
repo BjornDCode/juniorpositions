@@ -12,6 +12,7 @@ use App\Country;
 use App\Category;
 use App\UnlistedJob;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Artisan;
 
 class AdminController extends Controller
 {
@@ -40,6 +41,13 @@ class AdminController extends Controller
             'jobs' => $jobs,
             'cities' => $cities
         ]);
+    }
+
+    public function clearCache() 
+    {
+        Artisan::call('cache:clear');
+
+        return back();
     }
 
 }
