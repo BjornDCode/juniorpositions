@@ -13,6 +13,11 @@ class JobProvider
 
     public function __construct()
     {
+        
+    }
+
+    public function prepare() 
+    {
         $this->providers = [
             'Careercast' => [],
             'Github' => [],
@@ -23,11 +28,13 @@ class JobProvider
             'Stackoverflow' => []
         ];
 
-        $this->client = new JobsMulti($providers);
+        $this->client = new JobsMulti($this->providers);
         $this->client->setKeyword('junior');
+
+        return $this;
     }
 
-    public function getJobs() 
+    private function getJobs() 
     {
         $jobs = $this->client->getAllJobs();
 
@@ -63,7 +70,7 @@ class JobProvider
         $this->getJobs();
     }
 
-    public function parseJob($job) 
+    private function parseJob($job) 
     {
         $lowerCaseJobTitle = strtolower($job->title);
         if (strpos($lowerCaseJobTitle, 'junior') !== false || strpos($lowerCaseJobTitle, 'entry') !== false) {
