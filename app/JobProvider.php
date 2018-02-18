@@ -8,9 +8,12 @@ use JobApis\Jobs\Client\JobsMulti;
 class JobProvider 
 {
 
-    public function getJobs() 
+    protected $providers = [];
+    protected $client;
+
+    public function __construct()
     {
-        $providers = [
+        $this->providers = [
             'Careercast' => [],
             'Github' => [],
             'Govt' => [],
@@ -20,15 +23,44 @@ class JobProvider
             'Stackoverflow' => []
         ];
 
-        $client = new JobsMulti($providers);
+        $this->client = new JobsMulti($providers);
+        $this->client->setKeyword('junior');
+    }
 
-        $client->setKeyword('junior');
-
-        $jobs = $client->getAllJobs();
+    public function getJobs() 
+    {
+        $jobs = $this->client->getAllJobs();
 
         foreach ($jobs->all() as $job) {
             $this->parseJob($job);
         }
+    }
+
+    public function getAllJobs() 
+    {
+        $this->client->setOptions([
+            'maxAge' => 90
+        ]);
+
+        $this->getJobs();
+    }
+
+    public function getDailyJobs() 
+    {
+        $this->client->setOptions([
+            'maxAge' => 1
+        ]);
+
+        $this->getJobs();
+    }
+
+    public function getMonthlyJobs() 
+    {
+        $this->client->setOptions([
+            'maxAge' => 30
+        ]);
+
+        $this->getJobs();
     }
 
     public function parseJob($job) 
