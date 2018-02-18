@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Job;
 use App\UnlistedJob;
 use JobApis\Jobs\Client\JobsMulti;
 
@@ -72,16 +73,34 @@ class JobProvider
 
     private function parseJob($job) 
     {
-        $lowerCaseJobTitle = strtolower($job->title);
-        if (strpos($lowerCaseJobTitle, 'junior') !== false || strpos($lowerCaseJobTitle, 'entry') !== false) {
-            UnlistedJob::create([
-                'title' => $job->name,
-                'description' => $job->description,
-                'url' => $job->url,
-                'location' => $job->location,
-                'company' => $job->company
-            ]);
+        if (!$this->jobHasKeywordInTitle($job->title) || $this->jobDoesExist($job)) {
+            return;
         }
+
+        $this->createUnlistedJob($job);
+    }
+
+    private function createUnlistedJob($job) 
+    {
+        UnlistedJob::create([
+            'title' => $job->name,
+            'description' => $job->description,
+            'url' => $job->url,
+            'location' => $job->location,
+            'company' => $job->company
+        ]);
+    }
+
+    private function jobHasKeywordInTitle($jobTitle) 
+    {
+        return strpos(strtolower($jobTitle), 'junior') !== false;
+    }
+
+    private function jobDoesExist($job) 
+    {
+        $existingListedJob = Job::where('apply_url', $job->url)->first();
+        $existingUnlistedJob = UnlistedJob::where('url', $job->url)->first();
+        return $existingListedJob || $existingUnlistedJob;
     }
 
 }
